@@ -4,14 +4,17 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.envers.Audited;
 
 import javax.persistence.*;
 
+@Entity
 @Table(name = "producto")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Audited
 public class Producto {
 
     @Id
