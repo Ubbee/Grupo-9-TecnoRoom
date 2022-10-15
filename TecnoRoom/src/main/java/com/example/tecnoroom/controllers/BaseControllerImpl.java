@@ -23,7 +23,7 @@ public abstract class BaseControllerImpl<E,S extends BaseServiceImpl<E,Long>> im
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<?> getOne(@PathVariable Long id){
+    public ResponseEntity<?> getById(@PathVariable Long id){
         try {
             return ResponseEntity.status(HttpStatus.OK).body(servicio.findById(id));
 
@@ -53,7 +53,7 @@ public abstract class BaseControllerImpl<E,S extends BaseServiceImpl<E,Long>> im
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> delete(@PathVariable Long id){
+    public ResponseEntity<?> deleteById(@PathVariable Long id){
         try {
             return ResponseEntity.status(HttpStatus.NO_CONTENT).body(servicio.deleteById(id));
 

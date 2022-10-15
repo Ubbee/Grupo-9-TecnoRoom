@@ -9,5 +9,4 @@ public class TecnoRoomApplication {
     public static void main(String[] args) {
         SpringApplication.run(TecnoRoomApplication.class, args);
     }
-asdasdasdasdas asdasdasd
 }
