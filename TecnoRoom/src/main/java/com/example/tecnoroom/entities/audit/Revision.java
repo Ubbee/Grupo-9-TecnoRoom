@@ -10,15 +10,17 @@ import java.util.Date;
 @Entity
 public class Revision implements Serializable {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "revision_seq")
-    @SequenceGenerator(name = "revision_seq",sequenceName = "rbac.seq_revision_id")
-    @RevisionNumber
-    private Long id;
+    private static final long serialVersionUID = 1L;
 
-    @Column(name = "REVISION_DATE")
+    @Id
+    @GeneratedValue(strategy= GenerationType.SEQUENCE, generator = "revision_seq")
+    @SequenceGenerator(name = "revision_seq", sequenceName = "rbac.seq_revision_id")
+    @RevisionNumber
+    private int id;
+
+    @Column(name="REVISION_DATE")
     @Temporal(TemporalType.TIMESTAMP)
     @RevisionTimestamp
-    private Date fecha;
+    private Date date;
 
 }

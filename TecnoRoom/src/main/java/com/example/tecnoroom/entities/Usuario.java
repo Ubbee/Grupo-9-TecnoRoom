@@ -1,11 +1,21 @@
 package com.example.tecnoroom.entities;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import org.hibernate.envers.Audited;
 
-public abstract class Usuario {
+import javax.persistence.*;
+import java.io.Serializable;
+
+@MappedSuperclass
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Audited
+public class Usuario implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,6 +33,7 @@ public abstract class Usuario {
     @Column(name = "dni",nullable = false,unique = true)
     private int dni;
 
+    @Transient
     private String contraseña;
 
     @Column(name = "mail")
