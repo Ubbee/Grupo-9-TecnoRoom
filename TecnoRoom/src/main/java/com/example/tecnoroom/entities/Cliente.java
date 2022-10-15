@@ -19,9 +19,10 @@ import java.util.List;
 @Audited
 public class Cliente extends Usuario{
 
-    @OneToMany(cascade = CascadeType.MERGE)
-    @JoinColumn(name = "fk_compras")
-    List<Compras> compras = new ArrayList<Compras>();
 
+    @OneToMany(mappedBy = "cliente")
+    private List<Producto> productos = new ArrayList<Producto>();
 
+    @OneToMany(mappedBy = "cliente")
+    private List<Orden> ordenesCliente = new ArrayList<Orden>();
 }

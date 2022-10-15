@@ -1,5 +1,6 @@
 package com.example.tecnoroom.services;
 
+import com.example.tecnoroom.entities.Producto;
 import com.example.tecnoroom.repositories.BaseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -14,6 +15,9 @@ public abstract class BaseServiceImpl<E,ID extends Serializable> implements Base
 
     @Autowired
     protected BaseRepository<E,ID> baseRepository;
+
+    public BaseServiceImpl(BaseRepository<Producto, Long> baseRepository) {
+    }
 
     @Override
     @Transactional
