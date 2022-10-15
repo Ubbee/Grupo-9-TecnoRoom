@@ -23,6 +23,8 @@ public abstract class Usuario {
     @Column(name = "dni",nullable = false,unique = true)
     private int dni;
 
+    private String contraseña;
+
     @Column(name = "mail")
     private String mail;
 

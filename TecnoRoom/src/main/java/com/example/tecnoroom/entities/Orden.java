@@ -7,34 +7,34 @@ import lombok.Setter;
 import org.hibernate.envers.Audited;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
-@Table(name = "producto")
+@Table(name = "orden")
 @Getter
 @Setter
-@NoArgsConstructor
-@AllArgsConstructor
 @Audited
-public class Producto {
+@AllArgsConstructor
+@NoArgsConstructor
+public class Orden {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "nombre")
-    private String nombre;
+    @Column(name = "fechaCreacion")
+    private Date fechaCreacion;
 
-    @Column(name = "precio")
-    private float precio;
-
-    @Column(name = "descripcion")
-    private String descripcion;
-
-    @Column(name = "imagen")
-    private String imagen;
+    @Column(name = "total")
+    private double total;
 
     @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "fk_cliente")
     private Cliente cliente;
+
+    @OneToOne(cascade = CascadeType.MERGE)
+    @JoinColumn(name = "fk_detalleOrden")
+    private DetalleOrden detalleOrden;
+
 
 }
