@@ -19,7 +19,6 @@ import java.util.List;
 @Audited
 public class Cliente extends Usuario{
 
-
     @OneToMany(mappedBy = "cliente")
     private List<Producto> productos = new ArrayList<Producto>();
 

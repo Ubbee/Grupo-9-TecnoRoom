@@ -39,7 +39,7 @@ public class DetalleOrden {
     @OneToOne(mappedBy = "detalleOrden")
     private Orden orden;
 
-    @OneToOne(cascade = CascadeType.PERSIST)
+    @ManyToOne(cascade = CascadeType.PERSIST)
     private Producto producto;
 
 }

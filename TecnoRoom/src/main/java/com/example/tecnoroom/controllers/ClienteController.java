@@ -8,8 +8,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @CrossOrigin("*")
-@RequestMapping("tecnoRoom/v1/clientes")
+@RequestMapping("tecnoRoom/v1/cliente")
 public class ClienteController extends BaseControllerImpl<Cliente, ClienteServiceImpl>{
+
 
 
 }
