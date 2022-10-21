@@ -16,9 +16,6 @@ import java.util.List;
 @CrossOrigin("*")
 @RequestMapping("tecnoRoom/v1/producto")
 public class ProductoController extends BaseControllerImpl<Producto, ProductoServiceImpl>{
-<<<<<<< HEAD
-=======
-
     @Autowired
     private ProductoService productoService;
 
@@ -33,6 +30,4 @@ public class ProductoController extends BaseControllerImpl<Producto, ProductoSer
             return "Error";
         }
     }
-
->>>>>>> 8604d0cd062124d2f0e72ac1ede749f36ee27447
 }
