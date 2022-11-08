@@ -13,15 +13,15 @@ Hola! Siempre me ha interesado el mundo tecnológico y, principalmente, el de lo
 * *C++:* Medio
 
 ### Curotto Santiago
-Hola, tengo 23 años y estoy estudiando Programacion en la UTN gracias a que desde chico me he relacionado mucho con las computadoras influenciado de mi viejo que es Ingeniero en Sistemas. 
+Hola, tengo 24 años y estoy estudiando Programacion en la UTN gracias a que desde chico me he relacionado mucho con las computadoras influenciado de mi viejo que es Ingeniero en Sistemas. 
 
 **Conocimientos:**
 
-* *Java:* medio
-* *Spring:* medio
-* *MySQL:* bajo
-* *Git:* bajo
-* *Kotlin:* bajo
+* *Java* 
+* *Spring* 
+* *MySQL* 
+* *Git* 
+* *Kotlin*
 
 ### Mari Elio
 
