@@ -7,6 +7,12 @@
 }
 
 body{
+    background-image: url('https://p4.wallpaperbetter.com/wallpaper/533/152/939/pc-gaming-keyboard-monitor-computer-wallpaper-preview.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    backdrop-filter: blur(10px);
+    color: #ffffff;
 
     font-family: 'Roboto', sans-serif;
     background-color: #ffffff
