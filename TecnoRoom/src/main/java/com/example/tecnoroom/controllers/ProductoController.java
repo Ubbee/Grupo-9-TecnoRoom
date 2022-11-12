@@ -4,6 +4,7 @@ import com.example.tecnoroom.entities.Producto;
 import com.example.tecnoroom.services.ProductoService;
 import com.example.tecnoroom.services.ProductoServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,7 +25,7 @@ public class ProductoController extends BaseControllerImpl<Producto, ProductoSer
         try{
             List<Producto> productos = productoService.findAll();
             model.addAttribute("productos",productos);
-            return "/indexShop";
+            return "indexShop";
         }catch (Exception e){
             model.addAttribute("Error",e.getMessage());
             return "Error";
