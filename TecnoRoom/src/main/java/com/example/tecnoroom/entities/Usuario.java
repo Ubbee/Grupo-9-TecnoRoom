@@ -8,8 +8,11 @@ import org.hibernate.envers.Audited;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
-@MappedSuperclass
+@Entity
+@Table(name = "usuario")
 @Getter
 @Setter
 @AllArgsConstructor
@@ -33,8 +36,11 @@ public class Usuario implements Serializable {
     @Column(name = "dni",nullable = false,unique = true)
     private int dni;
 
+    @Column(name = "admin")
+    private boolean esAdmin = false;
+
     @Transient
-    private String contraseña;
+    private String password;
 
     @Column(name = "mail")
     private String mail;
@@ -44,5 +50,11 @@ public class Usuario implements Serializable {
 
     @Column(name = "provincia")
     private String provincia;
+
+    @OneToMany(mappedBy = "usuario")
+    private List<Producto> productos = new ArrayList<Producto>();
+
+    @OneToMany(mappedBy = "usuario")
+    private List<Orden> ordenesCliente = new ArrayList<Orden>();
 
 }

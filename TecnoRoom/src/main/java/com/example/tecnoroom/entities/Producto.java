@@ -34,7 +34,7 @@ public class Producto {
     private String imagen;
 
     @ManyToOne(cascade = CascadeType.PERSIST)
-    @JoinColumn(name = "fk_cliente")
-    private Cliente cliente;
+    @JoinColumn(name = "fk_usuario")
+    private Usuario usuario;
 
 }
