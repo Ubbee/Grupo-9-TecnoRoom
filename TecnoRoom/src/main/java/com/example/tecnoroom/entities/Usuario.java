@@ -33,9 +33,6 @@ public class Usuario implements Serializable {
     @Column(name = "direccion")
     private String direccion;
 
-    @Column(name = "dni",nullable = false,unique = true)
-    private int dni;
-
     @Column(name = "admin")
     private boolean esAdmin = false;
 
