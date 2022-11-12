@@ -27,7 +27,7 @@ public class DetalleOrden {
     @Column(name = "cantidad")
     private int cantidad;
 
-    @Column(name = "precio")
+    @Column(name = "precioUnitario")
     private double precio;
 
     @Column(name = "total")
