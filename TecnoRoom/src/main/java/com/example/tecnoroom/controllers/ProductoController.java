@@ -24,7 +24,7 @@ public class ProductoController extends BaseControllerImpl<Producto, ProductoSer
         try{
             List<Producto> productos = productoService.findAll();
             model.addAttribute("productos",productos);
-            return "/home/inicio";
+            return "/indexShop";
         }catch (Exception e){
             model.addAttribute("Error",e.getMessage());
             return "Error";

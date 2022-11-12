@@ -29,8 +29,8 @@ public class Orden {
     private double total;
 
     @ManyToOne(cascade = CascadeType.PERSIST)
-    @JoinColumn(name = "fk_cliente")
-    private Cliente cliente;
+    @JoinColumn(name = "fk_usuario")
+    private Usuario usuario;
 
     @OneToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "fk_detalleOrden")
