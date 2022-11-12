@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RestController
+@Controller
 @CrossOrigin("*")
 @RequestMapping("tecnoRoom/v1/producto")
 public class ProductoController extends BaseControllerImpl<Producto, ProductoServiceImpl>{
@@ -25,6 +25,16 @@ public class ProductoController extends BaseControllerImpl<Producto, ProductoSer
             List<Producto> productos = productoService.findAll();
             model.addAttribute("productos",productos);
             return "/home/inicio";
+        }catch (Exception e){
+            model.addAttribute("Error",e.getMessage());
+            return "Error";
+        }
+    }
+
+    @GetMapping("/shop")
+    public String shop(Model model){
+        try{
+            return "indexProd";
         }catch (Exception e){
             model.addAttribute("Error",e.getMessage());
             return "Error";
