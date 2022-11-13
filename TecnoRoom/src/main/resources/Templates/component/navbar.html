@@ -1,0 +1,65 @@
+<div th:fragment="navbar">
+    <nav class="navbar navbar-expand-lg navbar-light bg-danger">
+        <div class="container px-4 px-lg-5 text-white">
+
+            <a class="logo" href="#"><img src="https://i.imgur.com/dhmnDo4.png" style="width:120px;height:40px;"></a>
+
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
+                    class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                    <li class="nav-item"><a class="nav-link active text-white" aria-current="page" href="#!">Inicio</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#!">About</a></li>
+                    <li class="nav-item dropdown ">
+                        <a class="nav-link dropdown-toggle text-white" id="navbarDropdown" href="#" role="button"
+                           data-bs-toggle="dropdown" aria-expanded="false">Comprar</a>
+                        <ul class="dropdown-menu bg-danger" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item text-white" href="#!">Todos los Productos</a></li>
+                            <li>
+                                <hr class="dropdown-divider"/>
+                            </li>
+                            <li><a class="dropdown-item text-white" href="#!">Productos Populares</a></li>
+                            <li><a class="dropdown-item text-white" href="#!">Ingresos Nuevos</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <div>
+                    <form class="d-flex text-white">
+                        <button class="btn btn-outline-light flex-shrink-0" type="button">
+                            <i class="bi-cart-fill me-1"></i>
+                            Carro
+                            <span class="badge bg-light text-danger ms-3 rounded-pill">0</span>
+                        </button>
+                    </form>
+                </div>
+
+
+                <!-- Example split danger button -->
+                <div class="btn-group">
+                    <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="https://i.imgur.com/vV4X6Nq.png" alt="user img" style="width:40px;height:32px;"><span
+                            class="visually-hidden">Toggle Dropdown</span>
+                    </button>
+                    <ul class="dropdown-menu bg-danger">
+                        <li><a class="dropdown-item" href="#">Perfil</a></li>
+                        <li><a class="dropdown-item" href="#">Login</a></li>
+                        <li><a class="dropdown-item" href="#">Registro</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Salir</a></li>
+
+                    </ul>
+                </div>
+
+
+            </div>
+        </div>
+    </nav>
+</div>
