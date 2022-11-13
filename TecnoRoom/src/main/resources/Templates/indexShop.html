@@ -30,7 +30,7 @@
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-light bg-danger">
         <div class="container px-4 px-lg-5 text-white">
-            <a class="logo" href="#"><img  src="assets/img/cart.svg"></a>
+            <a class="logo" href="#"><img  src="https://i.imgur.com/dhmnDo4.png" style="width:120px;height:40px;"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
@@ -56,8 +56,6 @@
                        </button>
                    </form>
                </div>
-
-
                 <div class="dropdown">
                     <a
                             class="dropdown-toggle d-flex align-items-center hidden-arrow"
@@ -136,7 +134,7 @@
                             <img th:src="${producto.imagen}" class="card-img-top" alt="grafica img">
                                 <div class="card-body">
                                     <h5 class="card-title" th:text="${producto.nombre}">nombre prod</h5>
-                                    <p class="card-text">$<span th:text="${producto.precio}"></span></p>
+                                    <p class="card-text" >$<span th:text="${producto.precio}"></span></p>
                                     <a th:href="@{detalle/{id}(id=${producto.id})}" class="btn btn-primary">Comprar</a>
                                 </div>
                             </img>
