@@ -17,44 +17,45 @@ import java.util.List;
 @Controller
 @CrossOrigin("*")
 @RequestMapping(path = "tecnoRoom/v1/producto")
-public class ProductoController extends BaseControllerImpl<Producto, ProductoServiceImpl>{
-    @Autowired
-    private ProductoService productoService;
+public class ProductoController extends BaseControllerImpl<Producto, ProductoServiceImpl> {
 
-    @GetMapping("/home")
-    public String home(Model model){
-        try{
-            List<Producto> productos = productoService.findAll();
-            model.addAttribute("productos",productos);
-            return "indexShop";
-        }catch (Exception e){
-            model.addAttribute("Error",e.getMessage());
-            return "Error";
-        }
-    }
+  @Autowired
+  private ProductoService productoService;
 
-    @GetMapping("/shop")
-    public String shop(Model model){
-        try{
-            List<Producto> productos = productoService.findAll();
-            model.addAttribute("productos", productos);
-            return "indexProd";
-        }catch (Exception e){
-            model.addAttribute("Error",e.getMessage());
-            return "Error";
-        }
+  @GetMapping("/home")
+  public String home(Model model) {
+    try {
+      List<Producto> productos = productoService.findAll();
+      model.addAttribute("productos", productos);
+      return "indexShop";
+    } catch (Exception e) {
+      model.addAttribute("Error", e.getMessage());
+      return "Error";
     }
+  }
 
-    @GetMapping("/detalle/{id}")
-    public String producto(Model model, @PathVariable("id") long id){
-        try{
-            Producto producto = productoService.findById(id);
-            model.addAttribute("producto", producto);
-            return "indexProd";
-        }catch (Exception e){
-            model.addAttribute("Error",e.getMessage());
-            return "Error";
-        }
+  @GetMapping("/shop")
+  public String shop(Model model) {
+    try {
+      List<Producto> productos = productoService.findAll();
+      model.addAttribute("productos", productos);
+      return "indexProd";
+    } catch (Exception e) {
+      model.addAttribute("Error", e.getMessage());
+      return "Error";
     }
+  }
+
+  @GetMapping("/detalle/{id}")
+  public String producto(Model model, @PathVariable("id") long id) {
+    try {
+      Producto producto = productoService.findById(id);
+      model.addAttribute("producto", producto);
+      return "indexProd";
+    } catch (Exception e) {
+      model.addAttribute("Error", e.getMessage());
+      return "Error";
+    }
+  }
 
 }

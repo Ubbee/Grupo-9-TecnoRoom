@@ -14,7 +14,8 @@
         <link href="css/stylesShop.css" rel="stylesheet" />
 
         <!-- Background -->
-        <style>
+        <style >
+
             body {
                 background-image: url('https://img.freepik.com/fotos-premium/pc-teclado-rgb-videojuegos-computadora-fondo-color-neon-cuarto-oscuro-lugar-trabajo-gente_77190-8111.jpg?w=2000');
                 background-repeat: no-repeat;
@@ -23,6 +24,11 @@
                 backdrop-filter: blur(10px);
                 color: #ffffff;
             }
+            footer {
+                height: 205px;
+                width: 100%;
+            }
+
         </style>
 
     </head>
@@ -112,6 +118,8 @@
         <!-- Header-->
         <!-- Section-->
 
+
+    <!--
         <div class="container" style="align-items: center; justify-content: center; display: flex">
             <div class="row mt-5">
                 <div class="col-3 col-sm-3">
@@ -119,8 +127,8 @@
                         <div class="card text-bg-secondary mb-3" th:each="producto : ${productos}" align="center" >
                             <img th:src="${producto.imagen}" class="card-img-top" alt="grafica img">
                                 <div class="card-body">
-                                    <h5 class="card-title text-black" th:text="${producto.nombre}">nombre prod</h5>
-                                    <p class="card-text text-black">$<span th:text="${producto.precio}"></span></p>
+                                    <h5 class="card-title" th:text="${producto.nombre}">nombre prod</h5>
+                                    <p class="card-text">$<span th:text="${producto.precio}"></span></p>
                                     <a th:href="@{detalle/{id}(id=${producto.id})}" class="btn btn-primary">Comprar</a>
                                 </div>
                             </img>
@@ -129,26 +137,38 @@
                 </div>
             </div>
         </div>
+    -->
 
     <!--  ------------------------------------------------------------------ -->
-
-    <div class="container" style="align-items: center; justify-content: center; display: flex">
-        <div class=" row mt-5" th:if="${producto != null}">
-            <div class="col-12 col-sm-3" th:each="merchs : ${merch}">
-                <div class="card text-bg-dark mb-3" style="width: 17rm">
-                    <div class="col-md-5" >
-                        <img class="card-img-top" th:src="${merchs.img_portada}"  alt="imagen merch del usuaio">
-                    </div>
-                    <h5 class="card-title" th:value="${merchs.nombre}" th:text="${merchs.nombre}"></h5>
-                    <p class="card-text" th:text="${merchs.fabricante.getNombre}"></p>
+    <section class="py-5 ">
+    <div class="container px-4 px-lg-5 mt-5">
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+    <div class="col mb-5" th:each="producto : ${productos}" align="center">
+        <div class="card h-100 bg-secondary" >
+            <!-- Product image-->
+            <img class="card-img-top" th:src="${producto.imagen}" alt="grafica img" />
+            <!-- Product details-->
+            <div class="card-body p-4">
+                <div class="text-center">
+                    <!-- Product name-->
+                    <h5 class="fw-bolder" th:text="${producto.nombre}">Fancy Product</h5>
+                    <!-- Product price-->
+                    <p class="card-text">$<span th:text="${producto.precio}"></span></p>
                 </div>
+            </div>
+            <!-- Product actions-->
+            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                <div class="text-center text"><a class="btn btn-outline-light mt-auto" th:href="@{detalle/{id}(id=${producto.id})}">Detalles</a></div>
             </div>
         </div>
     </div>
+        </div>
+    </div>
+    </section>
 
         <!--  ------------------------------------------------------------------ -->
         <!-- Footer-->
-        <footer class="py-5 bg-danger">
+        <footer class="footer py-5 bg-danger">
             <div align="" class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2022</p></div>
         </footer>
         <!-- Bootstrap core JS-->

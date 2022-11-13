@@ -76,6 +76,8 @@
   }
 }
 
+
+
 body {
   background-image: url('https://p4.wallpaperbetter.com/wallpaper/533/152/939/pc-gaming-keyboard-monitor-computer-wallpaper-preview.jpg');
   background-repeat: no-repeat;
@@ -11296,5 +11298,15 @@ textarea.form-control-lg {
   width: 20px;
    height: 20px;
  }
+
+  html {
+    min-height: 100%;
+    position: relative;
+  }
+  body {
+    margin: 0;
+    margin-bottom: 40px;
+  }
+
 
 }

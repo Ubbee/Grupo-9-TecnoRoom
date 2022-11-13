@@ -11,6 +11,10 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 
+
+
+
+
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
@@ -77,6 +81,14 @@
   }
 }
 
+.footer{
+  background-color: #af233a;
+  padding: 1em 0;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
 
   body {
     background-image: url('https://p4.wallpaperbetter.com/wallpaper/533/152/939/pc-gaming-keyboard-monitor-computer-wallpaper-preview.jpg');
@@ -11295,3 +11307,7 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+.footer{
+  min-height: calc(100vh - 100px - 300px);
+}
+
