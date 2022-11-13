@@ -11,17 +11,29 @@
         <!-- Bootstrap icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/stylesProd.css" rel="stylesheet" />
+        <link rel="stylesheet" href="stylesProd.css"/>
+
+        <!-- Background -->
+        <style>
+            body {
+                background-image: url('https://img.freepik.com/fotos-premium/pc-teclado-rgb-videojuegos-computadora-fondo-color-neon-cuarto-oscuro-lugar-trabajo-gente_77190-8111.jpg?w=2000');
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: cover;
+                backdrop-filter: blur(10px);
+                color: #ffffff;
+            }
+        </style>
     </head>
     <body>
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-light bg-danger">
-        <div class=" container px-4 px-lg-5 text-white">
+        <div class="container px-4 px-lg-5 text-white">
             <a class="logo" href="#"><img  src="assets/img/cart.svg"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                    <li class="nav-item"><a class="nav-link active text-white" aria-current="page" href="#!">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link active text-white" aria-current="page" href="/home">Inicio</a></li>
                     <li class="nav-item"><a class="nav-link text-white" href="#!">About</a></li>
                     <li class="nav-item dropdown ">
                         <a class="nav-link dropdown-toggle text-white" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Comprar</a>
@@ -34,14 +46,49 @@
                     </li>
                 </ul>
 
-                <img src="assets/img/user.svg">
-                <form class="d-flex text-white">
-                    <button class="btn btn-outline-light flex-shrink-0" type="button">
-                        <i class="bi-cart-fill me-1"></i>
-                        Carro
-                        <span class="badge bg-light text-danger ms-3 rounded-pill">0</span>
-                    </button>
-                </form>
+                <div>
+                    <form class="d-flex text-white">
+                        <button class="btn btn-outline-light flex-shrink-0" type="button">
+                            <i class="bi-cart-fill me-1"></i>
+                            Carro
+                            <span class="badge bg-light text-danger ms-3 rounded-pill">0</span>
+                        </button>
+                    </form>
+                </div>
+
+
+                <div class="dropdown">
+                    <a
+                        class="dropdown-toggle d-flex align-items-center hidden-arrow"
+                        href="#"
+                        id="navbarDropdownMenuAvatar"
+                        role="button"
+                        data-mdb-toggle="dropdown"
+                        aria-expanded="false"
+                    >
+                        <img
+                            src="assets/img/user.svg"
+                            class="rounded-circle"
+                            height="25"
+                            alt="Black and White Portrait of a Man"
+                            loading="lazy"
+                        />
+                    </a>
+                    <ul
+                        class="dropdown-menu dropdown-menu-end"
+                        aria-labelledby="navbarDropdownMenuAvatar"
+                    >
+                        <li>
+                            <a class="dropdown-item" href="#">My profile</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#">Settings</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#">Logout</a>
+                        </li>
+                    </ul>
+                </div>
 
             </div>
         </div>
@@ -79,16 +126,16 @@
         <!-- Product section-->
         <section class="py-5">
             <div class="container px-4 px-lg-5 my-5">
-                <div class="row gx-4 gx-lg-5 align-items-center">
-                    <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="https://dummyimage.com/600x700/dee2e6/6c757d.jpg" alt="..." /></div>
-                    <div class="col-md-6">
-                        <div class="small mb-1" th:text="${producto.id}>SKU: BST-498</div>
-                        <h1 class="display-5 fw-bolder" th:text="${producto.nombre}>Shop item template</h1>
+                <div class="row gx-4 gx-lg-5 align-items-center" th:object="${producto}">
+                    <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" th:src="*{imagen}" alt="..." /></div>
+                    <div class="col-md-6" >
+                        <div class="small mb-1" >SKU: BST-498</div>
+                        <h1 th:text="*{nombre}" class="display-5 fw-bolder">Shop item template</h1>
                         <div class="fs-5 mb-5">
-                            <span class="text-decoration-line-through" th:text="${producto.precio}">$45.00</span>
-                            <span>$40.00</span>
+                            <span th:text="*{precio}"></span>
+                            <span>$</span>
                         </div>
-                        <p class="lead" th:text="${producto.descripcion} >Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium at dolorem quidem modi. Nam sequi consequatur obcaecati excepturi alias magni, accusamus eius blanditiis delectus ipsam minima ea iste laborum vero?</p>
+                        <p class="lead" th:text="${producto.descripcion}" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium at dolorem quidem modi, accusamus eius blanditiis delectus ipsam minima ea iste laborum vero</p>
                         <div class="d-flex text-white">
                             <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1" style="max-width: 3rem" />
                             <button class="btn btn-outline-light flex-shrink-0" type="button">
@@ -96,6 +143,12 @@
                                 Add to cart
                             </button>
                         </div>
+                        <p class="card-text" th:if="*{stock}">
+                            Stock: <span th:text="*{stock}"></span>
+                        </p>
+                        <p class="card-text" th:unless="*{stock}">
+                            <span class="text-danger">Sin Stock</span>
+                        </p>
                     </div>
                 </div>
             </div>

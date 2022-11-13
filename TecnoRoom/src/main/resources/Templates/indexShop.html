@@ -13,8 +13,20 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/stylesShop.css" rel="stylesheet" />
 
+        <!-- Background -->
+        <style>
+            body {
+                background-image: url('https://img.freepik.com/fotos-premium/pc-teclado-rgb-videojuegos-computadora-fondo-color-neon-cuarto-oscuro-lugar-trabajo-gente_77190-8111.jpg?w=2000');
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: cover;
+                backdrop-filter: blur(10px);
+                color: #ffffff;
+            }
+        </style>
+
     </head>
-    <body>
+    <body >
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-light bg-danger">
         <div class="container px-4 px-lg-5 text-white">
@@ -125,7 +137,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title" th:text="${producto.nombre}">nombre prod</h5>
                                     <p class="card-text">$<span th:text="${producto.precio}"></span></p>
-                                    <a th:href="@{/producto/{id}(id=${producto.id})}" class="btn btn-primary">Mas Informacion</a>
+                                    <a th:href="@{detalle/{id}(id=${producto.id})}" class="btn btn-primary">Comprar</a>
                                 </div>
                             </img>
                         </div>

@@ -78,15 +78,14 @@
 }
 
 
+  body {
+    background-image: url('https://p4.wallpaperbetter.com/wallpaper/533/152/939/pc-gaming-keyboard-monitor-computer-wallpaper-preview.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    backdrop-filter: blur(10px);
+    color: #ffffff;
 
-body {
-  background-image: url('../assets/img/fondo-teclado.jpg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
-  background-size: cover;
-  backdrop-filter: blur(10px);
-  color: #ffffff;
 
   margin: 0;
   font-family: var(--bs-body-font-family);
