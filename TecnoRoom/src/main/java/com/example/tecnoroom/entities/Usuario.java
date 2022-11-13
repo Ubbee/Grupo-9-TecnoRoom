@@ -54,4 +54,8 @@ public class Usuario implements Serializable {
     @OneToMany(mappedBy = "usuario")
     private List<Orden> ordenesCliente = new ArrayList<Orden>();
 
+    public void addProducto(Producto producto){
+        productos.add(producto);
+    }
+
 }
