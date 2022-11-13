@@ -38,13 +38,13 @@
                 class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                <li class="nav-item"><a class="nav-link active text-white" aria-current="page" href="#!">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link active text-white" aria-current="page" th:href="@{/tecnoRoom/v1/producto/home}">Inicio</a></li>
                 <li class="nav-item"><a class="nav-link text-white" href="#!">About</a></li>
                 <li class="nav-item dropdown ">
                     <a class="nav-link dropdown-toggle text-white" id="navbarDropdown" href="#" role="button"
                        data-bs-toggle="dropdown" aria-expanded="false">Comprar</a>
                     <ul class="dropdown-menu bg-danger" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item text-white" href="#!">Todos los Productos</a></li>
+                        <li><a class="dropdown-item text-white" th:href="@{/tecnoRoom/v1/producto/home}">Todos los Productos</a></li>
                         <li>
                             <hr class="dropdown-divider"/>
                         </li>
@@ -88,61 +88,7 @@
         </div>
     </div>
 </nav>
-<!--
-esto sera comentado usar si parece mas lindo
-     Navigation
-    <nav class="navbar navbar-expand-lg navbar-light bg-danger">
-        <div class="container px-4 px-lg-5" class=" text-white">
-            <a class="navbar-brand text-center text-white" href="#!">TecnoRoom</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                    <li class="nav-item dropdown ">
-                        <a class="nav-link dropdown-toggle text-white" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categorías</a>
-                        <ul class="dropdown-menu bg-danger" aria-labelledby="navbarDropdown" >
-                            <li><a class="dropdown-item text-white" href="#!">Todos los productos</a></li>
-                            <li><a class="dropdown-item text-white" href="#!">Ofertas</a></li>
-                            <li><a class="dropdown-item text-white" href="#!">Combos</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item"><a class="nav-link text-white" href="#!">Notebooks</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="#!">Placas de video</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="#!">Monitores</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="#!">Procesadores</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="#!">Promociones</a></li>
-                </ul>
-                <div class="nav__icons">
-                    <a href="#"><img src="assets/img/cart.svg"></a>
-                    <a href="#"><img src="assets/img/user.svg"></a>
-                </div>
-            </div>
-        </div>
-    </nav>
-    -->
-<!-- Header-->
-<!-- Section-->
 
-
-
-    <!--
-        <div class="container" style="align-items: center; justify-content: center; display: flex">
-            <div class="row mt-5">
-                <div class="col-3 col-sm-3">
-                    <div class="card-deck " >
-                        <div class="card text-bg-secondary mb-3" th:each="producto : ${productos}" align="center" >
-                            <img th:src="${producto.imagen}" class="card-img-top" alt="grafica img">
-                                <div class="card-body">
-                                    <h5 class="card-title" th:text="${producto.nombre}">nombre prod</h5>
-                                    <p class="card-text">$<span th:text="${producto.precio}"></span></p>
-                                    <a th:href="@{detalle/{id}(id=${producto.id})}" class="btn btn-primary">Comprar</a>
-                                </div>
-                            </img>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    -->
 
     <!--  ------------------------------------------------------------------ -->
     <section class="py-5 ">
