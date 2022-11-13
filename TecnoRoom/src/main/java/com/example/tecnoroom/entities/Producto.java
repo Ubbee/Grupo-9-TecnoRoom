@@ -27,6 +27,9 @@ public class Producto {
     @Column(name = "precio")
     private float precio;
 
+    @Column(name = "categoria")
+    private String categoria;
+
     @Column(name = "stock")
     private short stock;
 

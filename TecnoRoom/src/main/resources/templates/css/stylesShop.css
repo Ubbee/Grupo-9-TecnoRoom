@@ -7853,7 +7853,7 @@ textarea.form-control-lg {
 
 .bg-danger {
   --bs-bg-opacity: 1;
-  background-color: #D40000 !important;
+  background-color: #ff0000 !important;
 }
 
 .bg-light {

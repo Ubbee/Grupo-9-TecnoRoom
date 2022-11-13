@@ -16,7 +16,7 @@ import java.util.List;
 
 @Controller
 @CrossOrigin("*")
-@RequestMapping(path = "tecnoRoom/v1/producto")
+@RequestMapping(path = "tecnoRoom/producto")
 public class ProductoController extends BaseControllerImpl<Producto, ProductoServiceImpl> {
 
   @Autowired
@@ -34,17 +34,6 @@ public class ProductoController extends BaseControllerImpl<Producto, ProductoSer
     }
   }
 
-  @GetMapping("/shop")
-  public String shop(Model model) {
-    try {
-      List<Producto> productos = productoService.findAll();
-      model.addAttribute("productos", productos);
-      return "indexProd";
-    } catch (Exception e) {
-      model.addAttribute("Error", e.getMessage());
-      return "Error";
-    }
-  }
 
   @GetMapping("/detalle/{id}")
   public String producto(Model model, @PathVariable("id") long id) {
