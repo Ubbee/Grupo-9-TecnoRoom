@@ -47,6 +47,7 @@ public class UsuarioController extends BaseControllerImpl<Usuario, UsuarioServic
     public String addToCart(Model model, Usuario usuario, @PathVariable("id") long id){
         try {
             usuario = usuarioService.findById(usuario.getId());
+            System.out.println(usuario.getNombre());
             Producto producto = productoService.findById(id);
             usuario.addProducto(producto);
             return "redirect:/tecnoRoom/producto/home";
