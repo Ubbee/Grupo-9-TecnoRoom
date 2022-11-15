@@ -31,12 +31,22 @@ public class UsuarioController extends BaseControllerImpl<Usuario, UsuarioServic
         }
     }
 
+    @GetMapping("/login")
+    public String login(Model model) {
+        try {
+            return "indexLogin";
+        } catch (Exception e) {
+            model.addAttribute("Error", e.getMessage());
+            return "Error";
+        }
+    }
+
     @PostMapping("/save")
     public String save(Model model,Usuario usuario) {
         try {
             usuario.setEsAdmin(false);
             usuarioService.save(usuario);
-            return "redirect:/tecnoRoom/producto/home";
+            return "redirect:/tecnoRoom/usuario/login";
         } catch (Exception e) {
             model.addAttribute("Error", e.getMessage());
             return "Error";

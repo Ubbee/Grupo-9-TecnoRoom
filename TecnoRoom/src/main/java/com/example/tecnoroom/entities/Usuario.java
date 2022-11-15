@@ -36,7 +36,7 @@ public class Usuario implements Serializable {
     @Column(name = "admin")
     private boolean esAdmin = false;
 
-    @Transient
+    @Column(name = "password")
     private String password;
 
     @Column(name = "mail")

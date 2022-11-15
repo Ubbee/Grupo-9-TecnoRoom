@@ -57,18 +57,12 @@
                 </li>
             </ul>
 
-            <form class="input-group w-auto my-auto d-none d-sm-flex">
-                <input
-                        autocomplete="off"
-                        type="search"
-                        class="form-control rounded"
-                        placeholder="Search"
-                        style="min-width: 700px;"
-                />
-                <span class="input-group-text border-0 d-none d-lg-flex"
-                ><i class="fas fa-search"></i
-                ></span>
+            <form class="d-flex align-items-center"  role="search">
+                <input autocomplete="off" class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+                <span class="input-group-text border-0 d-none d-lg-flex"><i class="fas fa-search"></i></span>
             </form>
+
+
         </div>
 
 
@@ -92,7 +86,7 @@
                 </button>
                 <ul class="dropdown-menu bg-danger ">
                     <li><a class="dropdown-item text-white" href="#">Perfil</a></li>
-                    <li><a class="dropdown-item text-white" href="#">Login</a></li>
+                    <li><a class="dropdown-item text-white" th:href="@{/tecnoRoom/usuario/login}">Login</a></li>
                     <li><a class="dropdown-item text-white" th:href="@{/tecnoRoom/usuario/registro}">Registro</a></li>
                     <li>
                         <hr class="dropdown-divider">
