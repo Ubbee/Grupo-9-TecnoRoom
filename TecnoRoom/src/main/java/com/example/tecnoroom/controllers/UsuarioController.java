@@ -46,7 +46,7 @@ public class UsuarioController extends BaseControllerImpl<Usuario, UsuarioServic
         try {
             usuario.setEsAdmin(false);
             usuarioService.save(usuario);
-            return "redirect:/tecnoRoom/usuario/login";
+            return "redirect:/tecnoRoom/producto/home";
         } catch (Exception e) {
             model.addAttribute("Error", e.getMessage());
             return "Error";

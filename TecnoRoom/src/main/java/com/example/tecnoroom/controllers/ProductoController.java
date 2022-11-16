@@ -7,10 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -41,6 +38,27 @@ public class ProductoController extends BaseControllerImpl<Producto, ProductoSer
       Producto producto = productoService.findById(id);
       model.addAttribute("producto", producto);
       return "indexProd";
+    } catch (Exception e) {
+      model.addAttribute("Error", e.getMessage());
+      return "Error";
+    }
+  }
+
+  @GetMapping("/crud")
+  public String crud(Model model) {
+    try {
+      return "administrador/CRUD";
+    } catch (Exception e) {
+      model.addAttribute("Error", e.getMessage());
+      return "Error";
+    }
+  }
+
+  @PostMapping("/save")
+  public String guardarProducto(Model model,Producto producto) {
+    try {
+      productoService.save(producto);
+      return "redirect:/tecnoRoom/producto/crud";
     } catch (Exception e) {
       model.addAttribute("Error", e.getMessage());
       return "Error";
