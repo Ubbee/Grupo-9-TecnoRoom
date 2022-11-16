@@ -19,6 +19,7 @@ public class UsuarioController extends BaseControllerImpl<Usuario, UsuarioServic
 
     @Autowired
     private UsuarioService usuarioService;
+    @Autowired
     private ProductoService productoService;
 
     @GetMapping("/registro")
