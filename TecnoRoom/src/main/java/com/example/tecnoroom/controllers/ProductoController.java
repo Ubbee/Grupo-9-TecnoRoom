@@ -47,6 +47,8 @@ public class ProductoController extends BaseControllerImpl<Producto, ProductoSer
   @GetMapping("/crud")
   public String crud(Model model) {
     try {
+      List<Producto> productos = productoService.findAll();
+      model.addAttribute("products",productos);
       return "administrador/CRUD";
     } catch (Exception e) {
       model.addAttribute("Error", e.getMessage());
@@ -61,7 +63,7 @@ public class ProductoController extends BaseControllerImpl<Producto, ProductoSer
       return "redirect:/tecnoRoom/producto/crud";
     } catch (Exception e) {
       model.addAttribute("Error", e.getMessage());
-      return "Error";
+      return "error";
     }
   }
 

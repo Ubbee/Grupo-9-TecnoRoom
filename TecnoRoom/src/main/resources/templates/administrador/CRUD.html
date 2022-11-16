@@ -318,17 +318,17 @@
                     <th>Acciones</th>
                 </tr>
                 </thead>
-                <tbody th:each="producto : ${productos}">
-                <tr>
+                <tbody >
+                <tr th:each="producto : ${products}">
                     <td>
 							<span class="custom-checkbox">
 								<input type="checkbox" id="checkbox1" name="options[]" value="1">
 								<label for="checkbox1"></label>
 							</span>
                     </td>
-                    <td th:text="${producto}"></td>
+                    <td th:text="${producto.getNombre()}"></td>
                     <td th:text="${producto.stock}"></td>
-                    <td th:text="${producto.precio}"></td>
+                    <td>$ <span th:text="${producto.precio}"></span></td>
                     <td th:text="${producto.categoria}"></td>
                     <td>
                         <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Editar">&#xE254;</i></a>
@@ -357,7 +357,7 @@
 <div id="addEmployeeModal" class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form th:action="@{/tecnoRoom/producto/save}">
+            <form th:action="@{/tecnoRoom/producto/save}" method="post">
                 <div class="modal-header">
                     <h4 class="modal-title">Agregar producto</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -365,27 +365,29 @@
                 <div class="modal-body">
                     <div class="form-group">
                         <label>Nombre producto</label>
-                        <input type="text" class="form-control" required name="nombre">
+                        <input type="text" class="form-control" required name="nombre" id="nombre">
                     </div>
                     <div class="form-group">
                         <label>Precio</label>
-                        <input type="text" class="form-control" required name="precio">
+                        <input type="text" class="form-control" required name="precio" id="precio">
                     </div>
                     <div class="form-group">
-                        <label>Categoría</label>
-                        <input type="text" class="form-control" required name="categoria">
+                        <select class="select justify-content-center" name="categoria">
+                            <option value="1" disabled selected>Categoria</option>
+                            <option value="Motherboard">Motherboard</option>
+                        </select>
                     </div>
                     <div class="form-group">
                         <label>Descripción</label>
-                        <textarea class="form-control" required name="descripcion"></textarea >
+                        <textarea class="form-control" required name="descripcion" id="descripcion"></textarea >
                     </div>
                     <div class="form-group">
                         <label>URL Imagen</label>
-                        <input type="url" class="form-control" required name="imagen">
+                        <input type="url" class="form-control" required name="imagen" id="imagen">
                     </div>
                     <div class="form-group">
                         <label>Cantidad</label>
-                        <input type="text" class="form-control" required name="stock">
+                        <input type="text" class="form-control" required name="stock" id="stock">
                     </div>
                 </div>
                 <div class="modal-footer">
