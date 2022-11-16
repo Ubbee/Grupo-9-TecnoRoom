@@ -8,7 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 public abstract class BaseControllerImpl<E,S extends BaseServiceImpl<E,Long>> implements BaseController<E,Long> {
-//hola
+
     @Autowired
     protected S servicio;
 

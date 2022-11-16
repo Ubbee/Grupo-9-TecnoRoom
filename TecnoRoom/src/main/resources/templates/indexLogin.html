@@ -1,91 +1,91 @@
 
-<!DOCTYPE html>
-<html lang="es" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>Material Design for Bootstrap</title>
-    <!-- MDB icon -->
-    <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
-    <!-- Bootstrap icons-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <!-- Google Fonts Roboto -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"/>
-    <!-- MDB -->
-    <link rel="stylesheet" href="css/mdb.min.css" />
-</head>
+<!--<!DOCTYPE html>-->
+<!--<html lang="es" xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8" />-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />-->
+<!--    <meta http-equiv="x-ua-compatible" content="ie=edge" />-->
+<!--    <title>Material Design for Bootstrap</title>-->
+<!--    &lt;!&ndash; MDB icon &ndash;&gt;-->
+<!--    <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />-->
+<!--    &lt;!&ndash; Font Awesome &ndash;&gt;-->
+<!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>-->
+<!--    &lt;!&ndash; Bootstrap icons&ndash;&gt;-->
+<!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"-->
+<!--          integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">-->
+<!--    &lt;!&ndash; Google Fonts Roboto &ndash;&gt;-->
+<!--    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"/>-->
+<!--    &lt;!&ndash; MDB &ndash;&gt;-->
+<!--    <link rel="stylesheet" href="css/mdb.min.css" />-->
+<!--</head>-->
 
-<body>
-<!-- Navigation-->
-<nav th:replace="navAndFoot :: nav_bar"></nav>
+<!--<body>-->
+<!--&lt;!&ndash; Navigation&ndash;&gt;-->
+<!--<nav th:replace="navAndFoot :: nav_bar"></nav>-->
 
-<section class="vh-100">
-    <div class="container py-5 h-100">
-        <div class="row d-flex align-items-center justify-content-center h-100">
-            <div class="col-md-8 col-lg-7 col-xl-6">
-                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg"
-                     class="img-fluid" alt="Phone image">
-            </div>
-            <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
-                <form th:action="@{/tecnoRoom/usuario/login}" method="post">
+<!--<section class="vh-100">-->
+<!--    <div class="container py-5 h-100">-->
+<!--        <div class="row d-flex align-items-center justify-content-center h-100">-->
+<!--            <div class="col-md-8 col-lg-7 col-xl-6">-->
+<!--                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg"-->
+<!--                     class="img-fluid" alt="Phone image">-->
+<!--            </div>-->
+<!--            <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">-->
+<!--                <form th:action="@{/tecnoRoom/usuario/login}" method="post">-->
 
-                    <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Login</p>
-                    <div class="text-center"><span class="text-danger" th:if="${session[SPRING_SECURITY_LAST_EXCEPTION] != null and session[SPRING_SECURITY_LAST_EXCEPTION].message != null}" text="Mail o Contraseña incorrecto">Mail o Contraseña incorrecto</span></div>
-                    <!-- Email input -->
-                    <div class="d-flex flex-row align-items-center mb-4">
-                        <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
-                        <div class="form-outline flex-fill mb-0">
-                            <label class="form-label" for="email">Email</label>
-                            <input type="email" id="email" class="form-control" name="mail">
+<!--                    <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Login</p>-->
+<!--                    <div class="text-center"><span class="text-danger" th:if="${session[SPRING_SECURITY_LAST_EXCEPTION] != null and session[SPRING_SECURITY_LAST_EXCEPTION].message != null}" text="Mail o Contraseña incorrecto">Mail o Contraseña incorrecto</span></div>-->
+<!--                    &lt;!&ndash; Email input &ndash;&gt;-->
+<!--                    <div class="d-flex flex-row align-items-center mb-4">-->
+<!--                        <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>-->
+<!--                        <div class="form-outline flex-fill mb-0">-->
+<!--                            <label class="form-label" for="email">Email</label>-->
+<!--                            <input type="email" id="email" class="form-control" name="mail">-->
 
-                        </div>
-                    </div>
+<!--                        </div>-->
+<!--                    </div>-->
 
-                    <!-- Password input -->
-                    <div class="d-flex flex-row align-items-center mb-4">
-                        <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
-                        <div class="form-outline flex-fill mb-0">
-                            <label class="form-label" for="password">Contraseña</label>
-                            <input type="text" id="password" class="form-control" name="password">
-                        </div>
-                    </div>
+<!--                    &lt;!&ndash; Password input &ndash;&gt;-->
+<!--                    <div class="d-flex flex-row align-items-center mb-4">-->
+<!--                        <i class="fas fa-lock fa-lg me-3 fa-fw"></i>-->
+<!--                        <div class="form-outline flex-fill mb-0">-->
+<!--                            <label class="form-label" for="password">Contraseña</label>-->
+<!--                            <input type="text" id="password" class="form-control" name="password">-->
+<!--                        </div>-->
+<!--                    </div>-->
 
-                    <div class="d-flex justify-content-around align-items-center mb-4">
-                        <!-- Checkbox -->
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="form1Example3" checked />
-                            <label class="form-check-label" for="form1Example3"> Recordáme </label>
-                        </div>
-                        <a href="#!">Te olvidaste la contraseña?</a>
-                    </div>
+<!--                    <div class="d-flex justify-content-around align-items-center mb-4">-->
+<!--                        &lt;!&ndash; Checkbox &ndash;&gt;-->
+<!--                        <div class="form-check">-->
+<!--                            <input class="form-check-input" type="checkbox" value="" id="form1Example3" checked />-->
+<!--                            <label class="form-check-label" for="form1Example3"> Recordáme </label>-->
+<!--                        </div>-->
+<!--                        <a href="#!">Te olvidaste la contraseña?</a>-->
+<!--                    </div>-->
 
-                    <!-- Submit button -->
-                    <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                        <button type="submit" class="btn btn-primary btn-lg" name="submit" value="submit">Iniciar Seción</button>
-                    </div>
+<!--                    &lt;!&ndash; Submit button &ndash;&gt;-->
+<!--                    <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">-->
+<!--                        <button type="submit" class="btn btn-primary btn-lg" name="submit" value="submit">Iniciar Sesión</button>-->
+<!--                    </div>-->
 
-                </form>
-                <div class="divider d-flex align-items-center my-4 text-center justify-content-center">
-                    <p class=" fw-bold mx-3 mb-0 text-muted">O</p>
-                </div>
+<!--                </form>-->
+<!--                <div class="divider d-flex align-items-center my-4 text-center justify-content-center">-->
+<!--                    <p class=" fw-bold mx-3 mb-0 text-muted">O</p>-->
+<!--                </div>-->
 
-                <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                    <button type="submit" class="btn btn-primary btn-lg" name="submitR" value="submitR">Registráte</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Bootstrap core JS-->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
-        crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-        crossorigin="anonymous"></script>
-<!-- Footer-->
-<footer th:replace="navAndFoot :: footer "></footer>
-</body>
-</html>
+<!--                <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">-->
+<!--                    <a type="submit" class="btn btn-primary btn-lg" th:href="@{/tecnoRoom/usuario/registro}">Registráte</a>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
+<!--&lt;!&ndash; Bootstrap core JS&ndash;&gt;-->
+<!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"-->
+<!--        crossorigin="anonymous"></script>-->
+<!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"-->
+<!--        crossorigin="anonymous"></script>-->
+<!--&lt;!&ndash; Footer&ndash;&gt;-->
+<!--<footer th:replace="navAndFoot :: footer "></footer>-->
+<!--</body>-->
+<!--</html>-->
