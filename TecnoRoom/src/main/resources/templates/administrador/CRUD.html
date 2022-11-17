@@ -311,6 +311,7 @@
 								<label for="selectAll"></label>
 							</span>
                     </th>
+                    <th>ID</th>
                     <th>Nombre</th>
                     <th>Stock</th>
                     <th>Precio</th>
@@ -326,6 +327,7 @@
 								<label for="checkbox1"></label>
 							</span>
                     </td>
+                    <td th:text="${producto.getId()}"></td>
                     <td th:text="${producto.getNombre()}"></td>
                     <td th:text="${producto.stock}"></td>
                     <td>$ <span th:text="${producto.precio}"></span></td>
@@ -357,7 +359,7 @@
 <div id="addEmployeeModal" class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form th:action="@{/tecnoRoom/producto/save}" method="post">
+            <form>
                 <div class="modal-header">
                     <h4 class="modal-title">Agregar producto</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -365,7 +367,7 @@
                 <div class="modal-body">
                     <div class="form-group">
                         <label>Nombre producto</label>
-                        <input type="text" class="form-control" required name="nombre" id="nombre">
+                       <input type="text" class="form-control" required name="nombre" id="nombre">
                     </div>
                     <div class="form-group">
                         <label>Precio</label>
@@ -375,6 +377,13 @@
                         <select class="select justify-content-center" name="categoria">
                             <option value="1" disabled selected>Categoria</option>
                             <option value="Motherboard">Motherboard</option>
+                            <option value="Placa de video">Placa de video</option>
+                            <option value="Gabinete">Gabinete</option>
+                            <option value="Procesador">Procesador</option>
+                            <option value="Memoria RAM">Memoria RAM</option>
+                            <option value="Almacenamiento">Almacenamiento</option>
+                            <option value="Fuente de poder">Fuente de poder</option>
+
                         </select>
                     </div>
                     <div class="form-group">
@@ -403,8 +412,9 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <form>
+
                 <div class="modal-header">
-                    <h4 class="modal-title">Agregar producto</h4>
+                    <h4 class="modal-title">Editar producto</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 </div>
                 <div class="modal-body">

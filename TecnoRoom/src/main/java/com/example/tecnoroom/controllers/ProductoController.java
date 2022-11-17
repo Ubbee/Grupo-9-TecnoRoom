@@ -56,6 +56,19 @@ public class ProductoController extends BaseControllerImpl<Producto, ProductoSer
     }
   }
 
+  @GetMapping("/editar/{id}")
+  public String editar(Model model,@PathVariable Long id) {
+    try {
+      Producto producto = productoService.findById(id);
+      model.addAttribute("product",producto);
+
+      return "redirect:/tecnoRoom/producto/crud";
+    } catch (Exception e) {
+      model.addAttribute("Error", e.getMessage());
+      return "Error";
+    }
+  }
+
   @PostMapping("/save")
   public String guardarProducto(Model model,Producto producto) {
     try {

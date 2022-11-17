@@ -33,7 +33,7 @@ public class Producto {
     @Column(name = "stock")
     private short stock;
 
-    @Column(name = "descripcion")
+    @Column(name = "descripcion",length = 1000)
     private String descripcion;
 
     @Column(name = "imagen")
