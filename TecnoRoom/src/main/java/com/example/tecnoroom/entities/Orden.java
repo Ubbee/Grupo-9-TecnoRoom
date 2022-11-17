@@ -28,6 +28,7 @@ public class Orden {
     @Column(name = "total")
     private double total;
 
+
     @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "fk_usuario")
     private Usuario usuario;

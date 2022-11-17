@@ -10,8 +10,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-
 @Controller
 @CrossOrigin("*")
 @RequestMapping("tecnoRoom/usuario")
@@ -25,7 +23,7 @@ public class UsuarioController extends BaseControllerImpl<Usuario, UsuarioServic
     @GetMapping("/registro")
     public String registro(Model model) {
         try {
-            return "indexRegister";
+            return "usuario/indexRegister";
         } catch (Exception e) {
             model.addAttribute("Error", e.getMessage());
             return "Error";
