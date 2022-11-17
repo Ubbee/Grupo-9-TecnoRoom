@@ -8,6 +8,8 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
+import org.thymeleaf.util.StringUtils;
 
 import java.util.List;
 
@@ -57,7 +59,7 @@ public class ProductoController extends BaseControllerImpl<Producto, ProductoSer
   }
 
   @GetMapping("/editar/{id}")
-  public String editar(Model model,@PathVariable Long id) {
+  public String editar(Model model,@PathVariable long id) {
     try {
       Producto producto = productoService.findById(id);
       model.addAttribute("product",producto);
@@ -69,15 +71,37 @@ public class ProductoController extends BaseControllerImpl<Producto, ProductoSer
     }
   }
 
-  @PostMapping("/save")
-  public String guardarProducto(Model model,Producto producto) {
+  @PostMapping("/actualizar")
+  public String actualizar(Model model,
+                           @RequestParam long id, @RequestParam String nombre,
+                           @RequestParam float precio, @RequestParam String descripcion,
+                           @RequestParam String imagen, @RequestParam short stock) throws Exception {
     try {
-      productoService.save(producto);
+      Producto producto= productoService.findById(id);
+      producto.setNombre(nombre);
+      producto.setPrecio(precio);
+      producto.setImagen(imagen);
+      producto.setDescripcion(descripcion);
+      producto.setStock(stock);
+      productoService.update(producto,id);
       return "redirect:/tecnoRoom/producto/crud";
     } catch (Exception e) {
       model.addAttribute("Error", e.getMessage());
       return "error";
     }
   }
+
+  @PostMapping("/save")
+  public String guardarProducto(Model model, Producto producto) throws Exception {
+    try {
+    productoService.save(producto);
+      return "redirect:/tecnoRoom/producto/crud";
+    } catch (Exception e) {
+      model.addAttribute("Error", e.getMessage());
+      return "error";
+    }
+  }
+
+
 
 }

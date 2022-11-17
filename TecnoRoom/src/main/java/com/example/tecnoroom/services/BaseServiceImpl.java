@@ -3,8 +3,6 @@ package com.example.tecnoroom.services;
 import com.example.tecnoroom.entities.Producto;
 import com.example.tecnoroom.repositories.BaseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 
 import javax.transaction.Transactional;
 import java.io.Serializable;
@@ -83,5 +81,8 @@ public abstract class BaseServiceImpl<E,ID extends Serializable> implements Base
             throw new Exception(e.getMessage());
         }
     }
+
+
+
 
 }

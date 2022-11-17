@@ -15,4 +15,5 @@ public interface BaseService<E,ID extends Serializable> {
 
     public boolean deleteById(ID id) throws Exception;
 
+
 }
