@@ -5,7 +5,7 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
   <meta http-equiv="x-ua-compatible" content="ie=edge"/>
-  <title>Material Design for Bootstrap</title>
+  <title>Carrito</title>
   <!-- MDB icon -->
   <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon"/>
   <!-- Font Awesome -->
@@ -35,7 +35,7 @@
                 <div class="p-5" >
                   <div class="d-flex justify-content-between align-items-center mb-5">
                     <h1 class="fw-bold mb-0 text-black">Carrito</h1>
-                    <h6 class="mb-0 text-muted" th:text="${cart.size()}"><span>productos</span></h6>
+                    <h6 class="mb-0 text-muted" th:text="${cart.size()} + ' productos'"></h6>
                   </div>
                   <hr class="my-4">
 
@@ -47,27 +47,25 @@
                     </div>
                     <div class="col-md-3 col-lg-3 col-xl-3">
                       <h6 class="text-muted" th:text="${dorden.getProducto().getCategoria()}"></h6>
-                      <h6 class="text-black mb-0" th:text="${dorden.getProducto().getNombre()}"></h6>
+                      <h6 class="text-black mb-0" th:text="${dorden.getProducto().getNombre()}" ></h6>
                     </div>
                     <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
-                      <button class="btn btn-link px-2"
-                              onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
-                        <i class="fas fa-minus"></i>
-                      </button>
+                      <h5 class="text-black mb-0" style="margin-right: 10px" >Cantidad:</h5>
 
-                      <input id="form1" min="0" name="quantity" value="1" type="number"
-                             class="form-control form-control-sm" />
+                      <h6 id="form1" min="0" name="quantity" value="1" type="text"
+                          class="form-control form-control-sm" th:text="${dorden.getCantidad()}" ></h6>
 
-                      <button class="btn btn-link px-2"
-                              onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
-                        <i class="fas fa-plus"></i>
-                      </button>
+
+
                     </div>
                     <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                      <h6 class="mb-0" >$ <span th:text="${dorden.getProducto().getPrecio()}"></span></h6>
+                      <h5 class="mb-0">Precio: $ <span th:text="${dorden.getProducto().getPrecio()}"></span></h5>
+                    </div>
+                    <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
+                      <h5 class="mb-0" >Total: $ <span th:text="${dorden.getTotal()}"></span></h5>
                     </div>
                     <div class="col-md-1 col-lg-1 col-xl-1 text-end">
-                      <a href="#!" class="text-muted"><i class="fas fa-times"></i></a>
+                      <a th:href="@{/tecnoRoom/detalle/deleteCart/{id}(id = ${dorden.getProducto().getId()})}" class="text-muted"><i class="fas fa-times"></i></a>
                     </div>
                   </div>
 
