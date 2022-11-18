@@ -6,14 +6,12 @@ import com.example.tecnoroom.entities.Producto;
 import com.example.tecnoroom.services.DetalleServiceImpl;
 import com.example.tecnoroom.services.ProductoService;
 import com.example.tecnoroom.services.ProductoServiceImpl;
-import org.dom4j.rule.Mode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 @Controller

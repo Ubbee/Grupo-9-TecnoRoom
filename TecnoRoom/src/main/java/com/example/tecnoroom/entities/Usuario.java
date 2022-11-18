@@ -7,9 +7,12 @@ import lombok.Setter;
 import org.hibernate.envers.Audited;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "usuario")
@@ -33,8 +36,11 @@ public class Usuario implements Serializable {
     @Column(name = "direccion")
     private String direccion;
 
-    @Column(name = "admin")
-    private boolean esAdmin = false;
+    //@Column(name = "admin")
+    //private boolean esAdmin = false;
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "usuario_rol", joinColumns = @JoinColumn(name = "usuario_id"), inverseJoinColumns =@JoinColumn(name ="rol_id"))
+    private Set<Rol> roles = new HashSet<>();
 
     @Column(name = "password")
     private String password;
