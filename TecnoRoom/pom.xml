@@ -15,6 +15,7 @@
     <description>TecnoRoom</description>
     <properties>
         <java.version>11</java.version>
+        <spring.version>5.7.5</spring.version>
     </properties>
     <dependencies>
         <dependency>

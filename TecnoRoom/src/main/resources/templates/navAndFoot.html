@@ -87,9 +87,10 @@
                         class="visually-hidden">Toggle Dropdown</span>
                 </button>
                 <ul class="dropdown-menu bg-danger ">
-                    <li><a class="dropdown-item text-white" href="#">Perfil</a></li>
-                    <li><a class="dropdown-item text-white" th:href="@{/tecnoRoom/usuario/login}">Login</a></li>
-                    <li><a class="dropdown-item text-white" th:href="@{/tecnoRoom/usuario/registro}">Registro</a></li>
+                    <li><a class="dropdown-item text-white" href="#">Perfil</a></li> <!-- sec:authorize="!isAuthenticated()" -->
+                    <li><a class="dropdown-item text-white" th:href="@{/tecnoRoom/usuario/login}" >Login</a></li>
+                    <li><a class="dropdown-item text-white" th:href="@{/tecnoRoom/usuario/registro}" >Registro</a></li>
+                    <li><a class="dropdown-item text-white" th:href="@{/tecnoRoom/usuario/logout}">Logout</a></li>
                     <li>
                         <hr class="dropdown-divider">
                     </li>
