@@ -69,11 +69,11 @@
 
 
             <div >
-                <form class="d-flex text-white navbar-toggler">
-                    <button class="btn btn-outline-light flex-shrink-0" type="button">
-                        <i class="bi-cart-fill me-1"></i>
+                <form class="d-flex text-white navbar-toggler" th:action="@{/tecnoRoom/detalle/getCart}" method="get">
+                    <button class="btn btn-outline-light flex-shrink-0" type="button" >
+                        <a class="bi-cart-fill me-1" ></a>
                         Carro
-                        <span class="badge bg-light text-danger ms-3 rounded-pill">0</span>
+                        <span class="badge bg-light text-danger ms-3 rounded-pill"></span>
                     </button>
                 </form>
             </div>
@@ -103,7 +103,7 @@
     </div>
 </nav>
 
-<!--&lt;!&ndash; Footer&ndash;&gt;-->
+<!--Footer-->
 <footer th:fragment="footer" class="footer py-5 bg-danger">
     <div align="" class="container"><p class="m-0 text-center text-white">Copyright &copy; TecnoRoom 2022</p></div>
 </footer>

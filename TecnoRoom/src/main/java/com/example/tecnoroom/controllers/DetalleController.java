@@ -39,11 +39,58 @@ public class DetalleController extends BaseControllerImpl<DetalleOrden, DetalleS
             detalleOrden.setNombreProducto(producto.getNombre());
             detalleOrden.setProducto(producto);
 
-            detalles.add(detalleOrden);
+            Long idProducto = producto.getId();
+            boolean ingresado = detalles.stream().anyMatch(p -> p.getProducto().getId() == idProducto);
+
+            if(!ingresado){
+                detalles.add(detalleOrden);
+            }
+
+
 
             sumaTotal = detalles.stream().mapToDouble(dt->dt.getTotal()).sum();
             orden.setTotal(sumaTotal);
             orden.setDetalleOrden(detalleOrden);
+
+            model.addAttribute("cart",detalles);
+            model.addAttribute("orden",orden);
+
+            return "usuario/carrito";
+        } catch (Exception e) {
+            model.addAttribute("Error", e.getMessage());
+            return "error";
+        }
+    }
+
+    @GetMapping("/deleteCart/{id}")
+    public String deleteCart(Model model,@PathVariable Long id){
+        try {
+            List<DetalleOrden> detallesAUX = new ArrayList<DetalleOrden>();
+
+            for(DetalleOrden detalleOrden : detalles){
+                if(detalleOrden.getProducto().getId() != id){
+                    detallesAUX.add(detalleOrden);
+                }
+            }
+
+            detalles = detallesAUX;
+
+            double sumaTotal = detalles.stream().mapToDouble(dt->dt.getTotal()).sum();
+            orden.setTotal(sumaTotal);
+
+            model.addAttribute("cart",detalles);
+            model.addAttribute("orden",orden);
+
+            return "usuario/carrito";
+        } catch (Exception e) {
+            model.addAttribute("Error", e.getMessage());
+            return "error";
+        }
+    }
+
+    @GetMapping("/getCart")
+    public String getCart(Model model){
+        try {
 
             model.addAttribute("cart",detalles);
             model.addAttribute("orden",orden);
