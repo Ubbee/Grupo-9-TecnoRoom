@@ -74,7 +74,7 @@
                 Usuario
                 </button>
                 <ul class="dropdown-menu bg-danger ">
-                    <li><a class="dropdown-item text-white" href="#">Perfil</a></li> <!-- sec:authorize="!isAuthenticated()" -->
+                    <li><a class="dropdown-item text-white" th:href="@{tecnoRoom/usuario/perfil}">Perfil</a></li> <!-- sec:authorize="!isAuthenticated()" -->
                     <li><a class="dropdown-item text-white" th:href="@{/tecnoRoom/usuario/logout}">Cerrar sesión</a></li>
                     <li>
                         <hr class="dropdown-divider">

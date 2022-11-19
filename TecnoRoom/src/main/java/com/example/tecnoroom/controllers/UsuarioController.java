@@ -7,7 +7,6 @@ import com.example.tecnoroom.services.ProductoService;
 import com.example.tecnoroom.services.UsuarioService;
 import com.example.tecnoroom.services.UsuarioServiceImpl;
 
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -16,9 +15,6 @@ import org.springframework.web.bind.annotation.*;
 
 
 import javax.servlet.http.HttpSession;
-
-import java.util.Optional;
-import java.util.logging.Logger;
 
 
 @Controller
@@ -59,8 +55,11 @@ public class UsuarioController extends BaseControllerImpl<Usuario, UsuarioServic
         try {
             usuario.setRol("USER");
             usuario.setPassword(bCryp.encode(usuario.getPassword()));
+            System.out.println(usuario.getId());
             usuarioService.save(usuario);
             session.setAttribute("idUsuario",usuario.getId());
+            System.out.println(usuario.getId());
+            System.out.println(session.getAttribute("idUsuario"));
             return "redirect:/tecnoRoom/producto/home";
         } catch (Exception e) {
             model.addAttribute("Error", e.getMessage());
@@ -108,16 +107,24 @@ public class UsuarioController extends BaseControllerImpl<Usuario, UsuarioServic
         }
     }
 
-    @GetMapping("/acceder")
-    public String acceder(Usuario usuario, Model model, HttpSession session){
+    @PostMapping("/acceder")
+    public String acceder(Model model, HttpSession session,Usuario usuario){
         try {
-            Optional<Usuario> user = usuarioService.findByById(Long.parseLong(session.getAttribute("idUsuario").toString()));
-            System.out.println("USUARIO: "+user);
-            if(user.isPresent()) {
+            usuario.setRol("USER");
+            usuario.setMail(usuario.getMail());
+            usuario.setPassword(bCryp.encode(usuario.getPassword()));
+            System.out.println(usuario.getId());
 
-                session.setAttribute("idUsuario", user.get().getId());
-                session.setAttribute("mailUsuario", user.get().getMail());
-                if (user.get().getRol().equals("ADMIN")) {
+           for(int i = 0; i<usuarioService.findAll().size();i++){
+               System.out.println(usuario.getMail());
+               System.out.println(i);
+           }
+            System.out.println("USUARIO: "+ usuario.getNombre());
+            if(usuario !=null) {
+
+                session.setAttribute("idUsuario", usuario.getId());
+                session.setAttribute("mailUsuario", usuario.getMail());
+                if (usuario.getRol().equals("ADMIN")) {
                     return "administrador/homeAdmin";
                 } else {
                     return "redirect:/tecnoRoom/producto/home";
@@ -143,8 +150,9 @@ public class UsuarioController extends BaseControllerImpl<Usuario, UsuarioServic
     @GetMapping("/perfil")
     public String perfil(Model model, HttpSession session){
         try {
+            //Optional<Usuario> user = usuarioService.fin(session.getAttribute("emailUsuario").toString());
             Usuario usuario = usuarioService.findById(Long.parseLong(session.getAttribute("idUsuario").toString()));
-            model.addAttribute("usuario",usuario);
+            model.addAttribute("usuario", usuario);
             model.addAttribute("sesion",session.getAttribute("idUsuario"));
             return "usuario/indexPerfil";
         } catch (Exception e) {
@@ -152,7 +160,6 @@ public class UsuarioController extends BaseControllerImpl<Usuario, UsuarioServic
             return "Error";
         }
     }
-
 
 }
 
