@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -89,12 +90,13 @@ public class DetalleController extends BaseControllerImpl<DetalleOrden, DetalleS
     }
 
     @GetMapping("/getCart")
-    public String getCart(Model model){
+    public String getCart(Model model, HttpSession session){
         try {
 
             model.addAttribute("cart",detalles);
             model.addAttribute("orden",orden);
 
+            model.addAttribute("sesion",session.getAttribute("idUsuario"));
             return "usuario/carrito";
         } catch (Exception e) {
             model.addAttribute("Error", e.getMessage());

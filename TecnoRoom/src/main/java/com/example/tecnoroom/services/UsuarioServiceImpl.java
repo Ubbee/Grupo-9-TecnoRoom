@@ -25,8 +25,12 @@ public class UsuarioServiceImpl extends BaseServiceImpl<Usuario, Long> implement
         return usuarioRepository.findById(id);
     }
 
-    public Optional<Usuario> getByMail(String mail) {
+    public Optional<Usuario> findByByMail(String mail) {
         return usuarioRepository.findByMail(mail);
+    }
+
+    @Override
+    public Optional<Usuario> findByById(Long id) { return usuarioRepository.findById(id);
     }
 
     public boolean existsById(long id){

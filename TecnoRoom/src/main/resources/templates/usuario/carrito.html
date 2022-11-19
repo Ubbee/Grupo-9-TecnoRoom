@@ -23,7 +23,13 @@
 <body>
 
 <!-- NavBar-->
-<nav th:replace="navAndFoot :: nav_bar"></nav>
+<div th:if="${sesion == null}">
+  <nav th:replace="navAndFoot :: nav_bar" ></nav>
+</div>
+
+<div th:unless="${sesion == null}">
+  <nav th:replace="navAndFoot :: nav_bar_user" ></nav>
+</div>
 
 <section class="h-100 h-custom" >
   <div class="container py-5 h-100">

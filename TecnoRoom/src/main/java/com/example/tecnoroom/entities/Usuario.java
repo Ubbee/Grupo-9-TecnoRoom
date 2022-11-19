@@ -1,9 +1,6 @@
 package com.example.tecnoroom.entities;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.envers.Audited;
 
 import javax.persistence.*;
@@ -21,6 +18,7 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 @Audited
+@ToString
 public class Usuario implements Serializable {
 
     @Id
@@ -36,11 +34,11 @@ public class Usuario implements Serializable {
     @Column(name = "direccion")
     private String direccion;
 
-    //@Column(name = "admin")
-    //private boolean esAdmin = false;
-    @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(name = "usuario_rol", joinColumns = @JoinColumn(name = "usuario_id"), inverseJoinColumns =@JoinColumn(name ="rol_id"))
-    private Set<Rol> roles = new HashSet<>();
+    @Column(name = "rol")
+    private String rol;
+//    @ManyToMany(fetch = FetchType.EAGER)
+//    @JoinTable(name = "usuario_rol", joinColumns = @JoinColumn(name = "usuario_id"), inverseJoinColumns =@JoinColumn(name ="rol_id"))
+//    private Set<Rol> roles = new HashSet<>();
 
     @Column(name = "password")
     private String password;

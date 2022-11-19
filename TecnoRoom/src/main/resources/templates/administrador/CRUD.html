@@ -286,7 +286,7 @@
 </head>
 <body>
 
-<nav th:replace="navAndFoot :: nav_bar"></nav>
+<nav th:replace="navAndFoot :: nav_bar_admin"></nav>
 
 <!--  ------------------------------------------------------------------ -->
 <div class="container-xl">
@@ -317,7 +317,6 @@
                     <th>Stock</th>
                     <th>Precio</th>
                     <th>Categoría</th>
-                    <th sec:authorize="hasRole('ROLE_ADMIN')">Acciones</th>
                 </tr>
                 </thead>
                 <tbody >
@@ -371,11 +370,11 @@
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="nombre">Nombre producto</label>
-                       <input type="text" class="form-control" id="nombre" required="required" name="nombre">
+                       <input type="text" class="form-control" id="name" required="required" name="nombre">
                     </div>
                     <div class="form-group">
                         <label for="precio">Precio</label>
-                        <input type="number" class="form-control" required name="precio" id="precio">
+                        <input type="number" class="form-control" required name="precio" id="price">
                     </div>
                     <div class="form-group">
                         <select class="select justify-content-center" name="categoria">
@@ -392,15 +391,15 @@
                     </div>
                     <div class="form-group">
                         <label>Descripción</label>
-                        <textarea class="form-control" required name="descripcion" id="descripcion"></textarea >
+                        <textarea class="form-control" required name="descripcion" id="description"></textarea >
                     </div>
                     <div class="form-group">
                         <label>URL Imagen</label>
-                        <input type="url" class="form-control" required name="imagen" id="imagen">
+                        <input type="url" class="form-control" required name="imagen" id="image">
                     </div>
                     <div class="form-group">
                         <label>Cantidad</label>
-                        <input type="number" class="form-control" required name="stock" id="stock">
+                        <input type="number" class="form-control" required name="stock" id="stok">
                     </div>
                 </div>
                 <div class="modal-footer">

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Controller
@@ -19,11 +20,26 @@ public class ProductoController extends BaseControllerImpl<Producto, ProductoSer
   private ProductoService productoService;
 
   @GetMapping("/home")
-  public String home(Model model) {
+  public String homeUser(Model model, HttpSession session) {
     try {
       List<Producto> productos = productoService.findAll();
       model.addAttribute("productos", productos);
-      return "usuario/indexShop";
+      model.addAttribute("sesion",session.getAttribute("idUsuario"));
+
+      return "usuario/home";
+    } catch (Exception e) {
+      model.addAttribute("Error", e.getMessage());
+      return "Error";
+    }
+  }
+
+  @GetMapping("/homeAdmin")
+  public String homeAdmin(Model model) {
+    try {
+      List<Producto> productos = productoService.findAll();
+      model.addAttribute("productos", productos);;
+
+      return "administrador/home";
     } catch (Exception e) {
       model.addAttribute("Error", e.getMessage());
       return "Error";
