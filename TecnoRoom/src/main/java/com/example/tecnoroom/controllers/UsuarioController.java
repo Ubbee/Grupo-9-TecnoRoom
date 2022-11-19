@@ -140,6 +140,18 @@ public class UsuarioController extends BaseControllerImpl<Usuario, UsuarioServic
             return "Error";
         }
     }
+    @GetMapping("/perfil")
+    public String perfil(Model model, HttpSession session){
+        try {
+            Usuario usuario = usuarioService.findById(Long.parseLong(session.getAttribute("idUsuario").toString()));
+            model.addAttribute("usuario",usuario);
+            model.addAttribute("sesion",session.getAttribute("idUsuario"));
+            return "usuario/indexPerfil";
+        } catch (Exception e) {
+            model.addAttribute("Error", e.getMessage());
+            return "Error";
+        }
+    }
 
 
 }
