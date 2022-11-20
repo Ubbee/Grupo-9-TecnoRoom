@@ -50,6 +50,7 @@ public class DetalleController extends BaseControllerImpl<DetalleOrden, DetalleS
             detalleOrden.setTotal(producto.getPrecio()*cantidad);
             detalleOrden.setNombreProducto(producto.getNombre());
             detalleOrden.setProducto(producto);
+            producto.setStock((short) (producto.getStock()-cantidad));
 
 
             Long idProducto = producto.getId();
