@@ -40,10 +40,11 @@
 <!--------------------------------- Seccion vista perfil ---------------------------------->
 <section class="py-5 ">
     <div class="container px-4 px-lg-5 mt-5">
-        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-auto justify-content-center" th:object="${usuario}">
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-auto justify-content-center"
+             th:object="${usuario}">
             <div class="card mb-4">
                 <div class="card-body text-center">
-                    <h5 class="my-3 text-black" th:text="*{getNombre()+getApellido()}">John Smith</h5>
+                    <h5 class="my-3 text-black" th:text="*{getNombre()+' '+getApellido()}">John Smith</h5>
                 </div>
                 <hr>
                 <div class="row">
@@ -82,9 +83,29 @@
                     <div class="col-sm-9">
                         <p class="text-muted mb-2" th:text="*{departamento}"></p>
                     </div>
-                <hr>
+                    <hr>
+                    <div th:if="${usuario.getProductos().isEmpty()}">
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <p class="mb-0 text-black">Productos</p>
+                            </div>
+                            <div class="col-sm-9">
+                                <p class="text-muted mb-2" text=Sin productos></p>
+                            </div>
+                        </div>
+                        <div th:unless="${usuario.getProductos().isEmpty()}">
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p class="mb-0 text-black">Productos</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <p class="text-muted mb-2" th:text="*{getProductos().size()}"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
 
         </div>
     </div>

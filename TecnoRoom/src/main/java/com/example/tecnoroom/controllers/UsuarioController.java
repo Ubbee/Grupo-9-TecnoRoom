@@ -117,6 +117,7 @@ public class UsuarioController extends BaseControllerImpl<Usuario, UsuarioServic
             System.out.println("USUARIO: "+ usuario.getNombre());
             if(usuario.getId() !=null && bCryp.matches(password, usuario.getPassword())) {
 
+                session.setAttribute("rolUsuario", usuario.getRol());
                 session.setAttribute("idUsuario", usuario.getId());
                 session.setAttribute("mailUsuario", usuario.getMail());
                 if (usuario.getRol().equals("ADMIN")) {
