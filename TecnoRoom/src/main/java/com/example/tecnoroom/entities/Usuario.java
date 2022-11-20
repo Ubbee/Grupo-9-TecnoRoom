@@ -61,5 +61,8 @@ public class Usuario implements Serializable {
     public void addProducto(Producto producto){
         productos.add(producto);
     }
+    public void addOrden(Orden orden){
+        ordenesCliente.add(orden);
+    }
 
 }

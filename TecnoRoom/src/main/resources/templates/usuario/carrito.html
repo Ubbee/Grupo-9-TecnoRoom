@@ -23,11 +23,11 @@
 <body>
 
 <!-- NavBar-->
-<div th:if="${sesion == null}">
+<div th:if="${session == null}">
   <nav th:replace="navAndFoot :: nav_bar" ></nav>
 </div>
 
-<div th:unless="${sesion == null}">
+<div th:unless="${session == null}">
   <nav th:replace="navAndFoot :: nav_bar_user" ></nav>
 </div>
 

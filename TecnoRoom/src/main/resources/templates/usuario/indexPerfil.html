@@ -43,7 +43,7 @@
         <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-auto justify-content-center" th:object="${usuario}">
             <div class="card mb-4">
                 <div class="card-body text-center">
-                    <h5 class="my-3 text-black" th:text="*{getNombre()}">John Smith</h5>
+                    <h5 class="my-3 text-black" th:text="*{getNombre()+getApellido()}">John Smith</h5>
                 </div>
                 <hr>
                 <div class="row">

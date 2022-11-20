@@ -93,19 +93,20 @@ public class UsuarioController extends BaseControllerImpl<Usuario, UsuarioServic
         }
     }*/
 
-    @PostMapping("/update/{id}")
-    public String addToCart(Model model, Usuario usuario, @PathVariable("id") long id){
-        try {
-            usuario = usuarioService.findById(usuario.getId());
-            System.out.println(usuario.getNombre());
-            Producto producto = productoService.findById(id);
-            usuario.addProducto(producto);
-            return "redirect:/tecnoRoom/producto/home";
-        } catch (Exception e) {
-            model.addAttribute("Error", e.getMessage());
-            return "Error";
-        }
-    }
+//obsoleto
+//    @PostMapping("/update/{id}")
+//    public String addToCart(Model model, Usuario usuario, @PathVariable("id") long id){
+//        try {
+//            usuario = usuarioService.findById(usuario.getId());
+//            System.out.println(usuario.getNombre());
+//            Producto producto = productoService.findById(id);
+//            usuario.addProducto(producto);
+//            return "redirect:/tecnoRoom/producto/home";
+//        } catch (Exception e) {
+//            model.addAttribute("Error", e.getMessage());
+//            return "Error";
+//        }
+//    }
 
     @PostMapping("/acceder")
     public String acceder(Model model, HttpSession session,Usuario usuario){

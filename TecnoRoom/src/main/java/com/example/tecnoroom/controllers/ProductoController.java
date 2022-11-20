@@ -72,10 +72,11 @@ public class ProductoController extends BaseControllerImpl<Producto, ProductoSer
   }
 
   @GetMapping("/editar/{id}")
-  public String editar(Model model,@PathVariable long id) {
+  public String editar(Model model,@PathVariable long id, HttpSession session) {
     try {
       Producto producto = productoService.findById(id);
       model.addAttribute("product",producto);
+      model.addAttribute("session",session.getAttribute("idUsuario"));
 
       return "redirect:/tecnoRoom/producto/crud";
     } catch (Exception e) {
