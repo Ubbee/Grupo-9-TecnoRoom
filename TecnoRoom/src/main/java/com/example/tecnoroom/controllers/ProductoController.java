@@ -4,6 +4,7 @@ import com.example.tecnoroom.entities.Producto;
 import com.example.tecnoroom.services.ProductoService;
 import com.example.tecnoroom.services.ProductoServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -110,6 +111,22 @@ public class ProductoController extends BaseControllerImpl<Producto, ProductoSer
     try {
     productoService.save(producto);
       return "redirect:/tecnoRoom/producto/crud";
+    } catch (Exception e) {
+      model.addAttribute("Error", e.getMessage());
+      return "error";
+    }
+  }
+
+  @GetMapping(value= "/busqueda")
+  public String busquedaProd(Model model, @RequestParam(value = "query", required = false)String q){
+    try {
+      System.out.println(q);
+      System.out.println(q);
+      System.out.println(q);
+      List<Producto> productos = this.productoService.findByTitle(q);
+      System.out.println(q);
+      model.addAttribute("productos",productos);
+      return "usuario/busqueda";
     } catch (Exception e) {
       model.addAttribute("Error", e.getMessage());
       return "error";

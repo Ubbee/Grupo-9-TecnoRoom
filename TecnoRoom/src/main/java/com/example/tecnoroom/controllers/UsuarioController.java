@@ -128,7 +128,7 @@ public class UsuarioController extends BaseControllerImpl<Usuario, UsuarioServic
             return "redirect:/tecnoRoom/usuario/login";
         } catch (Exception e) {
             model.addAttribute("Error", e.getMessage());
-            return "Error";
+            return "redirect:/tecnoRoom/usuario/login";
         }
     }
 
