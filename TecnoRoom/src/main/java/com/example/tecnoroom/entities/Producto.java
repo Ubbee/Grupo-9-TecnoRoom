@@ -39,7 +39,7 @@ public class Producto {
     @Column(name = "imagen")
     private String imagen;
 
-    @ManyToOne(cascade = CascadeType.PERSIST)
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "fk_usuario")
     private Usuario usuario;
 

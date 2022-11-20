@@ -332,7 +332,7 @@
                     <td th:text="${producto.stock}"></td>
                     <td>$ <span th:text="${producto.precio}"></span></td>
                     <td th:text="${producto.categoria}"></td>
-                    <td sec:authorize="hasRole('ROLE_ADMIN')">
+                    <td sec:authorize="hasRole('ADMIN')">
                         <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Editar">&#xE254;</i></a>
                         <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Eliminar">&#xE872;</i></a>
                     </td>

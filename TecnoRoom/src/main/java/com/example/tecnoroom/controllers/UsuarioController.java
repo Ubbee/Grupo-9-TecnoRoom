@@ -120,7 +120,7 @@ public class UsuarioController extends BaseControllerImpl<Usuario, UsuarioServic
                 session.setAttribute("idUsuario", usuario.getId());
                 session.setAttribute("mailUsuario", usuario.getMail());
                 if (usuario.getRol().equals("ADMIN")) {
-                    return "administrador/homeAdmin";
+                    return "redirect:/tecnoRoom/producto/homeAdmin";
                 } else {
                     return "redirect:/tecnoRoom/producto/home";
                 }

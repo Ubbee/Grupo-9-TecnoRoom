@@ -22,18 +22,20 @@ public class Orden {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "fechaCreacion")
+    @Column(name = "numeroOrden")
+    private String numero;
+
+    @Column(name = "fecha_creacion")
     private Date fechaCreacion;
 
     @Column(name = "total")
     private double total;
 
-
-    @ManyToOne(cascade = CascadeType.PERSIST)
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "fk_usuario")
     private Usuario usuario;
 
-    @OneToOne(cascade = CascadeType.MERGE)
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "fk_detalleOrden")
     private DetalleOrden detalleOrden;
 

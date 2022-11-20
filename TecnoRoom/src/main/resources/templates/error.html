@@ -8,7 +8,13 @@
 </head>
 <body>
 
-<nav th:replace="navAndFoot :: nav_bar"></nav>
+<div th:if="${sesion == null}">
+  <nav th:replace="navAndFoot :: nav_bar" ></nav>
+</div>
+
+<div th:unless="${sesion == null}">
+  <nav th:replace="navAndFoot :: nav_bar_user" ></nav>
+</div>
 
 <div class="container">
   <div class="row">

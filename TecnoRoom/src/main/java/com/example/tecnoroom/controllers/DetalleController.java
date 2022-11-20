@@ -4,10 +4,7 @@ import com.example.tecnoroom.entities.DetalleOrden;
 import com.example.tecnoroom.entities.Orden;
 import com.example.tecnoroom.entities.Producto;
 import com.example.tecnoroom.entities.Usuario;
-import com.example.tecnoroom.services.DetalleServiceImpl;
-import com.example.tecnoroom.services.ProductoService;
-import com.example.tecnoroom.services.ProductoServiceImpl;
-import com.example.tecnoroom.services.UsuarioService;
+import com.example.tecnoroom.services.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Controller
@@ -27,6 +25,12 @@ public class DetalleController extends BaseControllerImpl<DetalleOrden, DetalleS
     @Autowired
     UsuarioService usuarioService;
 
+    @Autowired
+    OrdenService ordenService;
+
+    @Autowired
+    DetalleService detalleService;
+
     List<DetalleOrden> detalles = new ArrayList<DetalleOrden>();
 
     Orden orden = new Orden();
@@ -38,7 +42,9 @@ public class DetalleController extends BaseControllerImpl<DetalleOrden, DetalleS
             DetalleOrden detalleOrden = new DetalleOrden();
             Producto producto = productoService.findById(id);
             double sumaTotal = 0;
+            Date fecha = new Date();
 
+            detalleOrden.setFecha(fecha);
             detalleOrden.setCantidad(cantidad);
             detalleOrden.setPrecio(producto.getPrecio());
             detalleOrden.setTotal(producto.getPrecio()*cantidad);
@@ -116,4 +122,55 @@ public class DetalleController extends BaseControllerImpl<DetalleOrden, DetalleS
             return "error";
         }
     }
+
+    @GetMapping("/order")
+    public String order(Model model, HttpSession session){
+        try {
+            Usuario usuario = usuarioService.findById(Long.parseLong(session.getAttribute("idUsuario").toString()));
+
+            model.addAttribute("cart",detalles);
+            model.addAttribute("orden",orden);
+            model.addAttribute("usuario",usuario);
+
+            return "usuario/resumenOrden";
+        } catch (Exception e) {
+            model.addAttribute("Error", e.getMessage());
+            return "error";
+        }
+    }
+
+    @GetMapping("/saveOrder")
+    public String savOrder(Model model, HttpSession session){
+        try {
+            Date fechaCreacion = new Date();
+
+            orden.setFechaCreacion(fechaCreacion);
+            orden.setNumero(ordenService.generarNumeroOrden());
+
+            Usuario usuario = usuarioService.findById(Long.parseLong(session.getAttribute("idUsuario").toString()));
+
+            orden.setUsuario(usuario);
+            ordenService.save(orden);
+
+            //guardar detalles
+            for(DetalleOrden dt : detalles){
+                dt.setOrden(orden);
+                detalleService.save(dt);
+            }
+
+            //limpia la lista y la orden
+            orden = new Orden();
+            detalles.clear();
+
+
+                return "redirect:/tecnoRoom/producto/home";
+
+
+        } catch (Exception e) {
+            model.addAttribute("error", e.getMessage());
+            return "error";
+        }
+    }
+
+
 }

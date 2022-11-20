@@ -59,7 +59,7 @@
                     <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
                       <h5 class="text-black mb-0" style="margin-right: 10px" >Cantidad:</h5>
 
-                      <h6 id="form1" min="0" name="quantity" value="1" type="text"
+                      <h6 id="form1" type="text"
                           class="form-control form-control-sm" th:text="${dorden.getCantidad()}" ></h6>
 
 
@@ -121,8 +121,8 @@
                     <h5>$ <span th:text="${orden.getTotal()}"></span></h5>
                   </div>
 
-                  <button type="button" class="btn btn-dark btn-block btn-lg"
-                          data-mdb-ripple-color="dark">Ver orden</button>
+                    <a  th:href="@{/tecnoRoom/detalle/order}" class="btn btn-dark">Ver orden</a>
+
 
                 </div>
               </div>
