@@ -110,17 +110,11 @@ public class UsuarioController extends BaseControllerImpl<Usuario, UsuarioServic
     @PostMapping("/acceder")
     public String acceder(Model model, HttpSession session,Usuario usuario){
         try {
-            usuario.setRol("USER");
-            usuario.setMail(usuario.getMail());
-            usuario.setPassword(bCryp.encode(usuario.getPassword()));
-            System.out.println(usuario.getId());
-
-           for(int i = 0; i<usuarioService.findAll().size();i++){
-               System.out.println(usuario.getMail());
-               System.out.println(i);
-           }
+            System.out.println(usuario.getMail());
+            String password = usuario.getPassword();
+            usuario = usuarioService.findByMail(usuario.getMail());
             System.out.println("USUARIO: "+ usuario.getNombre());
-            if(usuario !=null) {
+            if(usuario.getId() !=null && bCryp.matches(password, usuario.getPassword())) {
 
                 session.setAttribute("idUsuario", usuario.getId());
                 session.setAttribute("mailUsuario", usuario.getMail());
@@ -153,11 +147,11 @@ public class UsuarioController extends BaseControllerImpl<Usuario, UsuarioServic
             //Optional<Usuario> user = usuarioService.fin(session.getAttribute("emailUsuario").toString());
             Usuario usuario = usuarioService.findById(Long.parseLong(session.getAttribute("idUsuario").toString()));
             model.addAttribute("usuario", usuario);
-            model.addAttribute("sesion",session.getAttribute("idUsuario"));
+            //model.addAttribute("sesion",session.getAttribute("idUsuario"));
             return "usuario/indexPerfil";
         } catch (Exception e) {
             model.addAttribute("Error", e.getMessage());
-            return "Error";
+            return "error";
         }
     }
 

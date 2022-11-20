@@ -2,6 +2,7 @@ package com.example.tecnoroom.services;
 
 import com.example.tecnoroom.entities.Producto;
 import com.example.tecnoroom.repositories.BaseRepository;
+import com.example.tecnoroom.repositories.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.transaction.Transactional;
@@ -39,6 +40,8 @@ public abstract class BaseServiceImpl<E,ID extends Serializable> implements Base
             throw new Exception(e.getMessage());
         }
     }
+
+
 
     @Override
     @Transactional

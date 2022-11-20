@@ -16,4 +16,8 @@ public class ProductoServiceImpl extends BaseServiceImpl<Producto,Long> implemen
         super(baseRepository);
     }
 
+    @Override
+    public Producto findByMail(String mail) throws Exception {
+        return null;
+    }
 }

@@ -25,18 +25,27 @@ public class UserDetailServiceImpl implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        Usuario usuario = usuarioService.findByMail(username);
+        try {
 
-        Optional<Usuario> optionalUsuario = usuarioService.findByByMail(username);
 
-        if(optionalUsuario.isPresent()){
-            session.setAttribute("idUsuario",optionalUsuario.get().getId());
-            Usuario usuario = optionalUsuario.get();
 
-            return User.builder().username(usuario.getNombre()).password(usuario.getPassword()).roles(usuario.getRol()).build();
 
-        }else {
-        throw new UsernameNotFoundException("Usuario no encontrado");
+            if (usuario != null) {
+                session.setAttribute("idUsuario", usuario.getId());
+                usuario = usuarioService.findById(Long.parseLong(session.getAttribute("idUsuario").toString()));
+
+                return User.builder().username(usuario.getNombre()).password(usuario.getPassword()).roles(usuario.getRol()).build();
+
+
+            } else {
+                throw new UsernameNotFoundException("Usuario no encontrado");
+            }
+        } catch (Exception e) {
+            e.getMessage();
         }
+        return User.builder().username(usuario.getNombre()).password(usuario.getPassword()).roles(usuario.getRol()).build();
+
 
     }
 }

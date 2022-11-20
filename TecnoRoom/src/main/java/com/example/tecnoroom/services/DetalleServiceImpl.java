@@ -17,4 +17,9 @@ public class DetalleServiceImpl extends BaseServiceImpl<DetalleOrden, Long>  imp
     public DetalleServiceImpl(BaseRepository<Producto, Long> baseRepository) {
         super(baseRepository);
     }
+
+    @Override
+    public DetalleOrden findByMail(String mail) throws Exception {
+        return null;
+    }
 }

@@ -13,4 +13,9 @@ public class OrdenServiceImpl extends BaseServiceImpl<Orden,Long> implements Ord
     public OrdenServiceImpl(BaseRepository<Producto, Long> baseRepository) {
         super(baseRepository);
     }
+
+    @Override
+    public Orden findByMail(String mail) throws Exception {
+        return null;
+    }
 }

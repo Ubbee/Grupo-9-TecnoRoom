@@ -15,5 +15,9 @@ public interface BaseService<E,ID extends Serializable> {
 
     public boolean deleteById(ID id) throws Exception;
 
+    public E findByMail(String mail) throws Exception;
+
+
+
 
 }
