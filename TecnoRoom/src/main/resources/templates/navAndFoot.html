@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="es" xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+>
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
@@ -20,8 +20,9 @@
 <nav th:fragment="nav_bar_user" class="navbar navbar-expand-lg navbar-light bg-danger ">
     <div class="container px-4 px-lg-5 text-white">
 
-        <a class="logo position-absolute top-0 start-0" th:href="@{/tecnoRoom/producto/home}"><img src="https://i.imgur.com/dhmnDo4.png"
-                                                                   style="width:220px;height:60px;"></a>
+        <a class="logo position-absolute top-0 start-0" th:href="@{/tecnoRoom/producto/home}"><img
+                src="https://i.imgur.com/dhmnDo4.png"
+                style="width:220px;height:60px;"></a>
 
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -56,39 +57,42 @@
         </div>
 
 
-            <div >
-                <form class="d-flex text-white navbar-toggler" >
-                        <a class="btn btn-outline-light flex-shrink-0" th:href="@{/tecnoRoom/detalle/getCart}" >Carro</a>
-                </form>
-            </div>
-
-
-            <!-- Example split danger button -->
-            <div class="btn-group">
-                <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split"  data-bs-toggle="dropdown" aria-expanded="false">
-                <a class="bi-cart-fill me-1" ></a>
-                Usuario
-                </button>
-                <ul class="dropdown-menu bg-danger ">
-                    <li><a class="dropdown-item text-white" th:href="@{/tecnoRoom/usuario/perfil}">Perfil</a></li> <!-- sec:authorize="!isAuthenticated()" -->
-                    <li><a class="dropdown-item text-white" th:href="@{/tecnoRoom/usuario/logout}">Cerrar sesión</a></li>
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
-
-                </ul>
-            </div>
-
-
+        <div>
+            <form class="d-flex text-white navbar-toggler">
+                <a class="btn btn-outline-light flex-shrink-0" th:href="@{/tecnoRoom/detalle/getCart}">Carro</a>
+            </form>
         </div>
+
+
+        <!-- Example split danger button -->
+        <div class="btn-group">
+            <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                <a class="bi-cart-fill me-1"></a>
+                Usuario
+            </button>
+            <ul class="dropdown-menu bg-danger ">
+                <li><a class="dropdown-item text-white" th:href="@{/tecnoRoom/usuario/perfil}">Perfil</a></li>
+                <!-- sec:authorize="!isAuthenticated()" -->
+                <li><a class="dropdown-item text-white" th:href="@{/tecnoRoom/usuario/logout}">Cerrar sesión</a></li>
+                <li>
+                    <hr class="dropdown-divider">
+                </li>
+
+            </ul>
+        </div>
+
+
+    </div>
     </div>
 </nav>
 
 <nav th:fragment="nav_bar" class="navbar navbar-expand-lg navbar-light bg-danger ">
     <div class="container px-4 px-lg-5 text-white">
 
-        <a class="logo position-absolute top-0 start-0" th:href="@{/tecnoRoom/producto/home}"><img src="https://i.imgur.com/dhmnDo4.png"
-                                                                                                   style="width:220px;height:60px;"></a>
+        <a class="logo position-absolute top-0 start-0" th:href="@{/tecnoRoom/producto/home}"><img
+                src="https://i.imgur.com/dhmnDo4.png"
+                style="width:220px;height:60px;"></a>
 
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -123,19 +127,20 @@
         </div>
 
 
-        <div >
+        <div>
             <form class="d-flex text-white navbar-toggler">
-                <a class="btn btn-outline-light flex-shrink-0" th:href="@{/tecnoRoom/detalle/getCart}" >Carro</a>
+                <a class="btn btn-outline-light flex-shrink-0" th:href="@{/tecnoRoom/detalle/getCart}">Carro</a>
             </form>
         </div>
 
 
         <!-- Example split danger button -->
-        <div class="btn-group" >
-            <button type="button" class="btn btn-danger"  >
-                <a class="bi-cart-fill me-1" style="color: #f7fcff" th:href="@{/tecnoRoom/usuario/login}">Iniciar sesión</a>
+        <div class="btn-group">
+            <button type="button" class="btn btn-danger">
+                <a class="bi-cart-fill me-1" style="color: #f7fcff" th:href="@{/tecnoRoom/usuario/login}">Iniciar
+                    sesión</a>
 
-<!--                <span class="badge bg-light text-danger ms-3 rounded-pill"></span>-->
+                <!--                <span class="badge bg-light text-danger ms-3 rounded-pill"></span>-->
             </button>
         </div>
 
@@ -148,8 +153,9 @@
 <nav th:fragment="nav_bar_admin" class="navbar navbar-expand-lg navbar-light bg-danger ">
     <div class="container px-4 px-lg-5 text-white">
 
-        <a class="logo position-absolute top-0 start-0" th:href="@{/tecnoRoom/producto/homeAdmin}"><img src="https://i.imgur.com/dhmnDo4.png"
-                                                                                                   style="width:220px;height:60px;"></a>
+        <a class="logo position-absolute top-0 start-0" th:href="@{/tecnoRoom/producto/homeAdmin}"><img
+                src="https://i.imgur.com/dhmnDo4.png"
+                style="width:220px;height:60px;"></a>
 
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -176,8 +182,9 @@
                 </li>
             </ul>
 
-            <form class="d-flex align-items-center"  role="search">
-                <input autocomplete="off" class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+            <form class="d-flex align-items-center" role="search">
+                <input autocomplete="off" class="form-control me-2" type="search" placeholder="Buscar"
+                       aria-label="Search">
                 <span class="input-group-text border-0 d-none d-lg-flex"><i class="fas fa-search"></i></span>
             </form>
 
@@ -185,21 +192,23 @@
         </div>
 
 
-        <div >
-            <form class="d-flex text-white navbar-toggler"  >
-                <a class="btn btn-outline-light flex-shrink-0" th:href="@{/tecnoRoom/detalle/getCart}" >Carro</a>
+        <div>
+            <form class="d-flex text-white navbar-toggler">
+                <a class="btn btn-outline-light flex-shrink-0" th:href="@{/tecnoRoom/detalle/getCart}">Carro</a>
             </form>
         </div>
 
 
         <!-- Example split danger button -->
         <div class="btn-group">
-            <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split"  data-bs-toggle="dropdown" aria-expanded="false">
-                <a class="bi-cart-fill me-1" ></a>
+            <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                <a class="bi-cart-fill me-1"></a>
                 Administrador
             </button>
             <ul class="dropdown-menu bg-danger ">
-                <li><a class="dropdown-item text-white" th:href="@{/tecnoRoom/usuario/perfil}">Perfil</a></li> <!-- sec:authorize="!isAuthenticated()" -->
+                <li><a class="dropdown-item text-white" th:href="@{/tecnoRoom/usuario/perfil}">Perfil</a></li>
+                <!-- sec:authorize="!isAuthenticated()" -->
                 <li><a class="dropdown-item text-white" th:href="@{/tecnoRoom/usuario/logout}">Cerrar sesión</a></li>
                 <li>
                     <hr class="dropdown-divider">
@@ -209,15 +218,49 @@
         </div>
 
 
-
     </div>
     </div>
 </nav>
 
 <!--Footer-->
-<footer th:fragment="footer" class="footer py-5 bg-danger">
-    <div align="" class="container"><p class="m-0 text-center text-white">Copyright &copy; TecnoRoom 2022</p></div>
-</footer>
+
+<div class="container-fluid bg-danger mt-5 border-top px-5" th:fragment="footer">
+    <footer class="py-3">
+        <div class="row">
+            <div class="col-6 col-md-2 mb-3">
+                <h5>Información y Contacto</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="tel +2614850621" class="nav-link p-0 text-white">Número de
+                        contacto</a></li>
+                    <li class="nav-item mb-2"><a href="mailto:santiago.curotto.98@gmail.com?Subject=Contacto?"
+                                                 class="nav-link p-0 text-white">Envianos un email!</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Acerca de nosotros</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Información</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Politicas y servicios</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-md-2 mb-3 " >
+                <h5>Redes Sociales</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted"><img src="" class="social-media">Facebook</a>
+                    </li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted"><img src="" class="social-media">Twitter</a>
+                    </li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted"><img src="" class="social-media">Instagram</a>
+                    </li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted"><img src="" class="social-media">Tik Tok</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </footer>
+    <div class="text-center" >
+        <div class=" py-1 my-1 border-top" >
+            <p>Copyright &copy; TecnoRoom 2022</p>
+        </div>
+    </div>
+</div>
+
 
 <!-- Bootstrap core JS-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
