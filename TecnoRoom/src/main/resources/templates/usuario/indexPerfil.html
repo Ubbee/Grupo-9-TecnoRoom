@@ -40,56 +40,56 @@
 <!--------------------------------- Seccion vista perfil ---------------------------------->
 <section class="py-5 ">
     <div class="container px-4 px-lg-5 mt-5">
-        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-auto justify-content-center"
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-auto justify-content-center "
              th:object="${usuario}">
             <div class="card mb-4">
                 <div class="card-body text-center">
-                    <h5 class="my-3 text-black" th:text="*{getNombre()+' '+getApellido()}">John Smith</h5>
+                    <h5 class="my-3 text-black text-center" th:text="*{getNombre()+' '+getApellido()}">John Smith</h5>
                 </div>
                 <hr>
                 <div class="row">
                     <div class="col-sm-3">
-                        <p class="mb-0 text-black"><b>Email</b></p>
+                        <p class="mb-1 text-black"><b>Email</b></p>
                     </div>
                     <div class="col-sm-9">
-                        <p class="text-muted mb-0" th:text="*{mail}">example@example.com</p>
+                        <p class="text-muted mb-0 text-center" th:text="*{mail}">example@example.com</p>
                     </div>
                 </div>
 
                 <hr>
                 <div class="row">
-                    <div class="col-sm-3">
+                    <div class="col-sm-5">
                         <p class="mb-0 text-black"><b>Direección</b>  </p>
                     </div>
-                    <div class="col-sm-9">
-                        <p class="text-muted mb-0" th:text="*{direccion}">Bay Area, San Francisco, CA</p>
+                    <div class="col-sm-2">
+                        <p class="text-muted mb-0 text-center" th:text="*{direccion}">Bay Area, San Francisco, CA</p>
                     </div>
                 </div>
                 <hr>
 
                 <div class="row">
-                    <div class="col-sm-3">
+                    <div class="col-sm-4">
                         <p class="mb-0 text-black"><b>Provincia</b></p>
                     </div>
-                    <div class="col-sm-9">
-                        <p class="text-muted mb-0" th:text="*{provincia}">provincia</p>
+                    <div class="col-sm-3">
+                        <p class="text-muted mb-0 text-center" th:text="*{provincia}">provincia</p>
                     </div>
                 </div>
                 <hr>
                 <div class="row">
-                    <div class="col-sm-3">
+                    <div class="col-sm-5">
                         <p class="mb-0 text-black"><b>Departamento</b></p>
                     </div>
-                    <div class="col-sm-9">
-                        <p class="text-muted mb-2" th:text="*{departamento}"></p>
+                    <div class="col-sm-2">
+                        <p class="text-muted mb-2 text-center" th:text="*{departamento}"></p>
                     </div>
                     <hr>
                     <div th:if="${usuario.getProductos() != null}">
                         <div class="row">
-                            <div class="col-sm-3">
+                            <div class="col-sm-4">
                                 <p class="mb-0 text-black"><b>Productos</b></p>
                             </div>
-                            <div class="col-sm-9">
+                            <div class="col-sm-2 text-center">
                                 <p class="text-muted mb-2" th:text="*{getProductos().size()}"></p>
                             </div>
                         </div>
@@ -98,7 +98,7 @@
                                 <div class="col-sm-3">
                                     <p class="mb-0 text-black">Productos</p>
                                 </div>
-                                <div class="col-sm-9">
+                                <div class="col-sm-9 text-center">
                                     <p class="text-muted mb-2"> Sin Productos</p>
                                 </div>
                             </div>

@@ -36,10 +36,11 @@
     <nav th:replace="navAndFoot :: nav_bar_user" ></nav>
 </div>
 <!--  ------------------------------------------------------------------ -->
+<div th:if="${sesion == null}">
 <section class="py-5 ">
     <div class="container px-4 px-lg-5 mt-5">
         <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-            <div class="col mb-5" th:each="producto : ${productos}" align="center">
+            <div class="col mb-5" th:each="producto : ${productos}" align="center" th:if="${producto.getStock()>=1}">
                 <div class="card">
                     <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="dark">
                         <img th:src="${producto.getImagen()}" class="img-fluid"/>
@@ -50,15 +51,39 @@
                     <div class="card-body">
                         <h4 class="card-title text-black" th:text="${producto.getNombre()}"></h4>
                         <h6 class="text-black">$<span th:text="${producto.getPrecio()}"></span></h6>
-                        <a th:href="@{detalle/{id}(id=${producto.id})}" class="btn btn-primary">Ver detalles</a>
+                        <a th:href="@{/tecnoRoom/usuario/login}" class="btn btn-primary">Ver detalles</a>
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 </section>
+</div>
+<!-- ------------------------------------------------ -->
+<div th:unless="${sesion == null}">
+    <section class="py-5 ">
+        <div class="container px-4 px-lg-5 mt-5">
+            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                <div class="col mb-5" th:each="producto : ${productos}" align="center" th:if="${producto.getStock()>=1}">
+                    <div class="card">
+                        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="dark">
+                            <img th:src="${producto.getImagen()}" class="img-fluid"/>
+                            <a>
+                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title text-black" th:text="${producto.getNombre()}"></h4>
+                            <h6 class="text-black">$<span th:text="${producto.getPrecio()}"></span></h6>
+                            <a th:href="@{detalle/{id}(id=${producto.id})}" class="btn btn-primary">Ver detalles</a>
+                        </div>
+                    </div>
+                </div>
 
+            </div>
+        </div>
+    </section>
+</div>
 <!--  ------------------------------------------------------------------ -->
 
 <footer th:replace="navAndFoot :: footer "></footer>

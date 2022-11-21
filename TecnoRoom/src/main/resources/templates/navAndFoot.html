@@ -117,32 +117,28 @@
                 </li>
             </ul>
 
-            <form class="d-flex form-inline my-2 my-lg-0" role="search" th:action="@{/tecnoRoom/producto/busqueda}">
+            <form class="d-flex form-inline my-2 my-lg-0" role="search" th:action="@{/tecnoRoom/producto/busqueda}" s>
                 <button class="btn btn-outline-white my-2 my-sm-0 text-white" type="submit">Buscar</button>
                 <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" name="query">
             </form>
 
-
         </div>
-
 
         <div>
             <form class="d-flex text-white navbar-toggler">
-                <a class="btn btn-outline-light flex-shrink-0" th:href="@{/tecnoRoom/detalle/getCart}">Carro</a>
+                <a class="btn btn-outline-light flex-shrink-0" th:href="@{/tecnoRoom/usuario/login}">Carro</a>
             </form>
         </div>
 
-
-        <!-- Example split danger button -->
+<!--         Example split danger button -->
         <div class="btn-group">
             <button type="button" class="btn btn-danger">
-                <a class="bi-cart-fill me-1" style="color: #f7fcff" th:href="@{/tecnoRoom/usuario/login}">Iniciar
-                    sesión</a>
-
-                <!--                <span class="badge bg-light text-danger ms-3 rounded-pill"></span>-->
+                <a class="bi-cart-fill me-1" style="color: #f7fcff" th:href="@{/tecnoRoom/usuario/login}">Iniciar sesión</a>
+            </button>
+            <button type="button" class="btn btn-danger">
+            <a class="bi-cart-fill me-1" style="color: #f7fcff" th:href="@{/tecnoRoom/usuario/registro}">Registrarse</a>
             </button>
         </div>
-
 
     </div>
     </div>
@@ -237,23 +233,28 @@
                     <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Politicas y servicios</a></li>
                 </ul>
             </div>
-            <div class="col-6 col-md-2 mb-3 " >
+            <div class="col-6 col-md-2 mb-3 ">
                 <h5>Redes Sociales</h5>
                 <ul class="nav flex-column">
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted"><img src="" class="social-media">Facebook</a>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted"><img src=""
+                                                                                               class="social-media">Facebook</a>
                     </li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted"><img src="" class="social-media">Twitter</a>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted"><img src=""
+                                                                                               class="social-media">Twitter</a>
                     </li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted"><img src="" class="social-media">Instagram</a>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted"><img src=""
+                                                                                               class="social-media">Instagram</a>
                     </li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted"><img src="" class="social-media">Tik Tok</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted"><img src=""
+                                                                                               class="social-media">Tik
+                        Tok</a></li>
                 </ul>
             </div>
 
         </div>
     </footer>
-    <div class="text-center" >
-        <div class=" py-1 my-1 border-top" >
+    <div class="text-center">
+        <div class=" py-1 my-1 border-top">
             <p>Copyright &copy; TecnoRoom 2022</p>
         </div>
     </div>

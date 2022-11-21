@@ -90,159 +90,76 @@
         <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
 
             <!-- --------------------------------------------PRODUCTO 1--------------------------------------------- -->
-            <div class="col mb-5">
-                <div class="card h-100">
-
-                    <!-- Sale badge-->
-                    <div class="badge bg-dark text-white position-absolute"
-                         style="top: 0.5rem; right: 0.5rem">Sale
-                    </div>
-
-                    <!-- Product image-->
-                    <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg"
-                         alt="..."/>
-
-                    <!-- Product details-->
-                    <div class="card-body p-4" bg-secondary>
-                        <div class="text-center">
-
-                            <!-- Product name-->
-                            <h5 class="fw-bolder">Productos Chetos</h5>
-
-                            <!-- Product price-->
-                            $40.00 - $80.00
+            <div class="col mb-5" th:if="${producto.getStock()>7}">
+                <div class="col mb-5"  align="center" >
+                    <div class="card">
+                        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="dark">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSG6sAztZmOog2xD-uY02M0chQWnf_7tRkX6w&usqp=CAU" class="img-fluid"/>
+                            <a><div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div></a>
                         </div>
-                    </div>
-
-                    <!-- Product actions-->
-                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View
-                            options</a></div>
+                        <div class="card-body">
+                            <h4 class="card-title text-black" text="gtx 3080">gtx 3080</h4>
+                            <h6 class="text-black">$<span text="500">500</span></h6>
+                            <a href="" class="btn btn-primary">Ver detalles</a>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <!-- --------------------------------------------PRODUCTO 2--------------------------------------------- -->
-            <div class="col mb-5">
-                <div class="card h-100">
-
-                    <!-- Sale badge-->
-                    <div class="badge bg-dark text-white position-absolute"
-                         style="top: 0.5rem; right: 0.5rem">Sale
-                    </div>
-
-                    <!-- Product image-->
-                    <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg"
-                         alt="..."/>
-
-                    <!-- Product details-->
-                    <div class="card-body p-4">
-                        <div class="text-center" bg-secondary>
-
-                            <!-- Product name-->
-                            <h5 class="fw-bolder">Nashee Items</h5>
-
-                            <!-- Product reviews-->
-                            <div class="d-flex justify-content-center small text-warning mb-2">
-                                <div class="bi-star-fill"></div>
-                                <div class="bi-star-fill"></div>
-                                <div class="bi-star-fill"></div>
-                                <div class="bi-star-fill"></div>
-                                <div class="bi-star-fill"></div>
-                            </div>
-
-                            <!-- Product price-->
-                            <span class="text-muted text-decoration-line-through">$20.00</span>
-                            $18.00
+            <div class="col mb-5" th:if="${producto.getStock()>7}">
+                <div class="col mb-5"  align="center" >
+                    <div class="card">
+                        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="dark">
+                            <img src="https://topesdegama.com/app/uploads-topesdegama.com/2020/09/Monitor-gaming.jpg" class="img-fluid"/>
+                            <a><div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div></a>
                         </div>
-                    </div>
-
-                    <!-- Product actions-->
-                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to
-                            cart</a></div>
+                        <div class="card-body">
+                            <h4 class="card-title text-black" text="monitor 144hz">monitor 144hz</h4>
+                            <h6 class="text-black">$<span text="2322">2322</span></h6>
+                            <a href="" class="btn btn-primary">Ver detalles</a>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <!-- --------------------------------------------PRODUCTO 3--------------------------------------------- -->
-            <div class="col mb-5">
-                <div class="card h-100">
-
-                    <!-- Sale badge-->
-                    <div class="badge bg-dark text-white position-absolute"
-                         style="top: 0.5rem; right: 0.5rem">Sale
-                    </div>
-
-                    <!-- Product image-->
-                    <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg"
-                         alt="..."/>
-
-                    <!-- Product details-->
-                    <div class="card-body p-4">
-                        <div class="text-center" bg-secondary>
-
-                            <!-- Product name-->
-                            <h5 class="fw-bolder">Sale Item</h5>
-
-                            <!-- Product price-->
-                            <span class="text-muted text-decoration-line-through">$50.00</span>
-                            $25.00
+            <div class="col mb-5" th:if="${producto.getStock()>7}">
+                <div class="col mb-5"  align="center" >
+                    <div class="card">
+                        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="dark">
+                            <img src="https://levelupworld.com/assets/img/dt/monitores/monitor_24-up4480/1.png" class="img-fluid"/>
+                            <a><div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div></a>
                         </div>
-                    </div>
-
-                    <!-- Product actions-->
-                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to
-                            cart</a></div>
+                        <div class="card-body">
+                            <h4 class="card-title text-black" text="monitor 75hz">monitor 75hz</h4>
+                            <h6 class="text-black">$<span text="111"></span>111</h6>
+                            <a href="" class="btn btn-primary">Ver detalles</a>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <!-- --------------------------------------------PRODUCTO 4--------------------------------------------- -->
-            <div class="col mb-5">
-                <div class="card h-100">
-
-                    <!-- Sale badge-->
-                    <div class="badge bg-dark text-white position-absolute"
-                         style="top: 0.5rem; right: 0.5rem">Sale
-                    </div>
-
-                    <!-- Product image-->
-                    <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg"
-                         alt="..."/>
-
-                    <!-- Product details-->
-                    <div class="card-body p-4">
-                        <div class="text-center">
-
-                            <!-- Product name-->
-                            <h5 class="fw-bolder">Popular Item</h5>
-
-                            <!-- Product reviews-->
-                            <div class="d-flex justify-content-center small text-warning mb-2">
-                                <div class="bi-star-fill"></div>
-                                <div class="bi-star-fill"></div>
-                                <div class="bi-star-fill"></div>
-                                <div class="bi-star-fill"></div>
-                                <div class="bi-star-fill"></div>
-                            </div>
-
-                            <!-- Product price-->
-                            $40.00
+            <div class="col mb-5" th:if="${producto.getStock()>7}">
+                <div class="col mb-5"  align="center" >
+                    <div class="card">
+                        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="dark">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRv3HM3q79Zy1Y6DaBzo81GrwBMMwUNCra5QQ&usqp=CAU" class="img-fluid"/>
+                            <a><div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div></a>
                         </div>
-                    </div>
-
-                    <!-- Product actions-->
-                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to
-                            cart</a></div>
+                        <div class="card-body">
+                            <h4 class="card-title text-black" text="gtx 1050 ti">gtx 1050 ti</h4>
+                            <h6 class="text-black">$<span text="200">200</span></h6>
+                            <a href="" class="btn btn-primary">Ver detalles</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
 
 <!-- Footer-->
 <footer th:replace="navAndFoot :: footer "></footer>

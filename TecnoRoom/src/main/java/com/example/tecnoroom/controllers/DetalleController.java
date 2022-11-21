@@ -52,8 +52,6 @@ public class DetalleController extends BaseControllerImpl<DetalleOrden, DetalleS
             detalleOrden.setProducto(producto);
             producto.setStock((short) (producto.getStock()-cantidad));
 
-
-
             Long idProducto = producto.getId();
             boolean ingresado = detalles.stream().anyMatch(p -> p.getProducto().getId() == idProducto);
             if(!ingresado){
