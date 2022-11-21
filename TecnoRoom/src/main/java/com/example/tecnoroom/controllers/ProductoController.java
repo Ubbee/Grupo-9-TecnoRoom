@@ -120,11 +120,7 @@ public class ProductoController extends BaseControllerImpl<Producto, ProductoSer
   @GetMapping(value= "/busqueda")
   public String busquedaProd(Model model, @RequestParam(value = "query", required = false)String q){
     try {
-      System.out.println(q);
-      System.out.println(q);
-      System.out.println(q);
       List<Producto> productos = this.productoService.findByTitle(q);
-      System.out.println(q);
       model.addAttribute("productos",productos);
       return "usuario/busqueda";
     } catch (Exception e) {

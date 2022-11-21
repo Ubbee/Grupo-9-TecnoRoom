@@ -36,8 +36,8 @@
   <nav th:replace="navAndFoot :: nav_bar_user" ></nav>
 </div>
 <!--  ----------------------MENSAJE DE BUSQUEDA--------------------------- -->
-<div class="text-center" th:if="${productos == null}" >
-  <h2>Resultados: </h2>
+<div class="text-center" th:if="${productos != null}" >
+
   <section class="py-5 ">
     <div class="container px-4 px-lg-5 mt-5">
       <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
@@ -62,7 +62,7 @@
   </section>
 </div>
 <!--  ------------------------------------------------ -->
- <div class="text-center" th:unless="${productos == null}">
+ <div class="text-center" th:unless="${productos != null}">
   <h2 >No hay Resultados </h2>
 </div>
 

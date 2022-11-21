@@ -32,7 +32,7 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
                 <li class="nav-item"><a class="nav-link active text-white" aria-current="page"
                                         th:href="@{/tecnoRoom/producto/home}">Inicio</a></li>
-                <li class="nav-item"><a class="nav-link text-white" href="#!">About</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="#!">Nosotros</a></li>
                 <li class="nav-item dropdown ">
                     <a class="nav-link dropdown-toggle text-white" id="navbarDropdown" href="#" role="button"
                        data-bs-toggle="dropdown" aria-expanded="false">Comprar</a>
@@ -42,17 +42,16 @@
                         <li>
                             <hr class="dropdown-divider"/>
                         </li>
-                        <li><a class="dropdown-item text-white" href="#!">Productos Populares</a></li>
-                        <li><a class="dropdown-item text-white" href="#!">Ingresos Nuevos</a></li>
+                        <li><a class="dropdown-item text-white" href="#!">Componentes</a></li>
+                        <li><a class="dropdown-item text-white" href="#!">Perifericos</a></li>
                     </ul>
                 </li>
             </ul>
 
-            <form class="form-inline my-2 my-lg-0" th:action="@{/tecnoRoom/producto/busqueda}">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="query">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            <form class="d-flex form-inline my-2 my-lg-0" role="search" th:action="@{/tecnoRoom/producto/busqueda}">
+                <button class="btn btn-outline-white my-2 my-sm-0 text-white" type="submit">Buscar</button>
+                <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" name="query">
             </form>
-
 
         </div>
 
@@ -102,7 +101,7 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
                 <li class="nav-item"><a class="nav-link active text-white" aria-current="page"
                                         th:href="@{/tecnoRoom/producto/home}">Inicio</a></li>
-                <li class="nav-item"><a class="nav-link text-white" href="#!">About</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="#!">Nosotros</a></li>
                 <li class="nav-item dropdown ">
                     <a class="nav-link dropdown-toggle text-white" id="navbarDrospdown" href="#" role="button"
                        data-bs-toggle="dropdown" aria-expanded="false">Comprar</a>
@@ -112,15 +111,15 @@
                         <li>
                             <hr class="dropdown-divider"/>
                         </li>
-                        <li><a class="dropdown-item text-white" href="#!">Productos Populares</a></li>
-                        <li><a class="dropdown-item text-white" href="#!">Ingresos Nuevos</a></li>
+                        <li><a class="dropdown-item text-white" href="#!">Componentes</a></li>
+                        <li><a class="dropdown-item text-white" href="#!">Perifericos</a></li>
                     </ul>
                 </li>
             </ul>
 
-            <form class="form-inline my-2 my-lg-0" th:action="@{/tecnoRoom/producto/busqueda}">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="query">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            <form class="d-flex form-inline my-2 my-lg-0" role="search" th:action="@{/tecnoRoom/producto/busqueda}">
+                <button class="btn btn-outline-white my-2 my-sm-0 text-white" type="submit">Buscar</button>
+                <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" name="query">
             </form>
 
 
@@ -165,7 +164,7 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
                 <li class="nav-item"><a class="nav-link active text-white" aria-current="page"
                                         th:href="@{/tecnoRoom/producto/homeAdmin}">Inicio</a></li>
-                <li class="nav-item"><a class="nav-link text-white" href="#!">About</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="#!">Nosotros</a></li>
                 <li class="nav-item"><a class="nav-link text-white" th:href="@{/tecnoRoom/producto/crud}">CRUD</a></li>
                 <li class="nav-item dropdown ">
                     <a class="nav-link dropdown-toggle text-white" id="navbarDrodown" href="#" role="button"
@@ -176,16 +175,15 @@
                         <li>
                             <hr class="dropdown-divider"/>
                         </li>
-                        <li><a class="dropdown-item text-white" href="#!">Productos Populares</a></li>
-                        <li><a class="dropdown-item text-white" href="#!">Ingresos Nuevos</a></li>
+                        <li><a class="dropdown-item text-white" href="#!">Componentes</a></li>
+                        <li><a class="dropdown-item text-white" href="#!">Perifericos</a></li>
                     </ul>
                 </li>
             </ul>
 
-            <form class="d-flex align-items-center" role="search">
-                <input autocomplete="off" class="form-control me-2" type="search" placeholder="Buscar"
-                       aria-label="Search">
-                <span class="input-group-text border-0 d-none d-lg-flex"><i class="fas fa-search"></i></span>
+            <form class="d-flex form-inline my-2 my-lg-0" role="search" th:action="@{/tecnoRoom/producto/busqueda}">
+                <button class="btn btn-outline-white my-2 my-sm-0 text-white" type="submit">Buscar</button>
+                <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" name="query">
             </form>
 
 
