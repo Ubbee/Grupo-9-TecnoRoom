@@ -53,17 +53,15 @@ public class DetalleController extends BaseControllerImpl<DetalleOrden, DetalleS
             producto.setStock((short) (producto.getStock()-cantidad));
 
 
+
             Long idProducto = producto.getId();
             boolean ingresado = detalles.stream().anyMatch(p -> p.getProducto().getId() == idProducto);
-
             if(!ingresado){
                 detalles.add(detalleOrden);
                 usuario.addProducto(producto);
-
+                usuario.setProductos(usuario.getProductos());
+                producto.setUsuario(usuario);
             }
-
-
-
             sumaTotal = detalles.stream().mapToDouble(dt->dt.getTotal()).sum();
             orden.setTotal(sumaTotal);
             orden.setDetalleOrden(detalleOrden);
@@ -73,6 +71,10 @@ public class DetalleController extends BaseControllerImpl<DetalleOrden, DetalleS
             }
 
 
+            usuarioService.update(usuario, usuario.getId());
+            productoService.update(producto,producto.getId());
+            System.out.println("hello my id is " + usuario.getId());
+            System.out.println("i have" +usuario.getProductos().size() + " productos");
             model.addAttribute("cart",detalles);
             model.addAttribute("orden",orden);
 

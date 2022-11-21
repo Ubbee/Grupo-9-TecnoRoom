@@ -146,9 +146,13 @@ public class UsuarioController extends BaseControllerImpl<Usuario, UsuarioServic
     @GetMapping("/perfil")
     public String perfil(Model model, HttpSession session){
         try {
+
             //Optional<Usuario> user = usuarioService.fin(session.getAttribute("emailUsuario").toString());
             Usuario usuario = usuarioService.findById(Long.parseLong(session.getAttribute("idUsuario").toString()));
+            System.out.println("Hello my id is" + usuario.getId());
+            System.out.println("i have " + usuario.getProductos().size() + "products");
             model.addAttribute("usuario", usuario);
+            System.out.println(usuario.getProductos());
             //model.addAttribute("sesion",session.getAttribute("idUsuario"));
             return "usuario/indexPerfil";
         } catch (Exception e) {
