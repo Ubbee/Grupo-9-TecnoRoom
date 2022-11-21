@@ -70,7 +70,7 @@ public class DetalleController extends BaseControllerImpl<DetalleOrden, DetalleS
                 usuario.addOrden(orden);
             }
 
-
+            detalleService.save(detalleOrden);
             usuarioService.update(usuario, usuario.getId());
             productoService.update(producto,producto.getId());
             System.out.println("hello my id is " + usuario.getId());
